@@ -1,0 +1,272 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Top 20 des prix les plus élevés</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 24px;
+        background: #F4FAFB;
+        color: #263238;
+    }
+    h1 {
+        color: #1E7D8B;
+        margin-bottom: 6px;
+    }
+    .meta {
+        color: #607D8B;
+        margin-bottom: 18px;
+    }
+    .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: #F4FAFB;
+        padding: 10px 0 14px 0;
+    }
+    input {
+        width: min(680px, 96%);
+        padding: 11px 13px;
+        border: 1px solid #B7DDE4;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+    }
+    input:focus {
+        border-color: #33A5B6;
+        box-shadow: 0 0 0 3px rgba(51,165,182,0.15);
+    }
+    .table-wrap {
+        border: 1px solid #D9EEF2;
+        background: white;
+        border-radius: 10px;
+        overflow: auto;
+        max-height: 78vh;
+        box-shadow: 0 3px 14px rgba(0,0,0,0.10);
+    }
+    table.bn-table {
+        border-collapse: collapse;
+        width: max-content;
+        min-width: 100%;
+        font-size: 13px;
+    }
+    table.bn-table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: #1E7D8B;
+        color: white;
+        text-align: left;
+        padding: 10px 12px;
+        border: 1px solid #D9EEF2;
+        white-space: nowrap;
+    }
+    table.bn-table tbody td,
+    table.bn-table tbody th {
+        padding: 8px 12px;
+        border: 1px solid #E5EEF0;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+    table.bn-table tbody tr:nth-child(even) { background: #F8FBFC; }
+    table.bn-table tbody tr:hover { background: #EAF9FC; }
+</style>
+</head>
+<body>
+    <h1>Top 20 des prix les plus élevés</h1>
+    <div class="meta">20 ligne(s) affichée(s) · 5 colonne(s)</div>
+    <div class="toolbar">
+        <input id="searchInput" type="text" placeholder="Rechercher dans le tableau..." onkeyup="filterTable()">
+    </div>
+    <div class="table-wrap">
+        <table class="dataframe bn-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>product_id</th>
+      <th>sku</th>
+      <th>post_title</th>
+      <th>price</th>
+      <th>total_sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>216</th>
+      <td>4 352</td>
+      <td>15940</td>
+      <td>Champagne Egly-Ouriet Grand Cru Millésimé 2008</td>
+      <td>225,00 €</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>486</th>
+      <td>5 001</td>
+      <td>14581</td>
+      <td>David Duband Charmes-Chambertin Grand Cru 2014</td>
+      <td>217,50 €</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>669</th>
+      <td>5 892</td>
+      <td>14983</td>
+      <td>Coteaux Champenois Egly-Ouriet Ambonnay Rouge 2016</td>
+      <td>191,30 €</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>4 402</td>
+      <td>3510</td>
+      <td>Cognac Frapin VIP XO</td>
+      <td>176,00 €</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>630</th>
+      <td>5 767</td>
+      <td>15185</td>
+      <td>Camille Giroud Clos de Vougeot 2016</td>
+      <td>175,00 €</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>4 406</td>
+      <td>7819</td>
+      <td>Cognac Frapin Château de Fontpinot 1989 20 Ans d'Age</td>
+      <td>157,00 €</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>4 594</td>
+      <td></td>
+      <td>Pierre Jean Villa Côte Rôtie Fongeant 2017</td>
+      <td>144,00 €</td>
+      <td>-17</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>4 594</td>
+      <td></td>
+      <td>Pierre Jean Villa Condrieu Jardin Suspendu 2018</td>
+      <td>144,00 €</td>
+      <td>-56</td>
+    </tr>
+    <tr>
+      <th>435</th>
+      <td>4 904</td>
+      <td>14220</td>
+      <td>Domaine Des Croix Corton Charlemagne Grand Cru 2016</td>
+      <td>137,00 €</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>733</th>
+      <td>6 126</td>
+      <td>14923</td>
+      <td>Champagne Gosset Célébris Vintage 2007</td>
+      <td>135,00 €</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>588</th>
+      <td>5 612</td>
+      <td>14915</td>
+      <td>Domaine Weinbach Gewurztraminer Grand Cru Furstentum SGN 2010 1/2</td>
+      <td>124,80 €</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>685</th>
+      <td>5 917</td>
+      <td>14775</td>
+      <td>Wemyss Malts Single Cask Scotch Whisky Choc 'n' Nut Pretzel 2001 Bunnahabhain</td>
+      <td>122,00 €</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>745</th>
+      <td>6 213</td>
+      <td>15072</td>
+      <td>Domaine des Comtes Lafon Volnay 1er Cru Santenots du Milieu 2016</td>
+      <td>121,00 €</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>748</th>
+      <td>6 216</td>
+      <td>15070</td>
+      <td>Domaine des Comtes Lafon Volnay 1er Cru Champans 2016</td>
+      <td>121,00 €</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>739</th>
+      <td>6 202</td>
+      <td>15126</td>
+      <td>Domaine Clerget Echezeaux Grand Cru En Orveaux 2015</td>
+      <td>116,40 €</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>744</th>
+      <td>6 212</td>
+      <td>13996</td>
+      <td>Domaine des Comtes Lafon Volnay 1er Cru Santenots du Milieu 2015</td>
+      <td>115,00 €</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>747</th>
+      <td>6 215</td>
+      <td>12790</td>
+      <td>Domaine des Comtes Lafon Volnay 1er Cru Champans 2014</td>
+      <td>115,00 €</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>686</th>
+      <td>5 918</td>
+      <td>14773</td>
+      <td>Wemyss Malts Single Cask Scotch Whisky Chai Caramel Latte 2002 Craigellachie</td>
+      <td>114,00 €</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>503</th>
+      <td>5 025</td>
+      <td>13914</td>
+      <td>Champagne Agrapart &amp;amp; Fils L'Avizoise Extra Brut Blanc de Blancs Grand Cru 2012</td>
+      <td>112,00 €</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>4 582</td>
+      <td>12857</td>
+      <td>Château de Meursault Puligny-Montrachet 1er Cru Champ Canet 2014</td>
+      <td>109,60 €</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+<script>
+function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector('table.bn-table');
+    const rows = table.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+    });
+}
+</script>
+</body>
+</html>
