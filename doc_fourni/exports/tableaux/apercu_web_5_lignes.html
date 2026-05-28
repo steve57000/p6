@@ -1,0 +1,290 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Aperçu des 5 premières lignes du fichier Web</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 24px;
+        background: #F4FAFB;
+        color: #263238;
+    }
+    h1 {
+        color: #1E7D8B;
+        margin-bottom: 6px;
+    }
+    .meta {
+        color: #607D8B;
+        margin-bottom: 18px;
+    }
+    .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: #F4FAFB;
+        padding: 10px 0 14px 0;
+    }
+    input {
+        width: min(680px, 96%);
+        padding: 11px 13px;
+        border: 1px solid #B7DDE4;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+    }
+    input:focus {
+        border-color: #33A5B6;
+        box-shadow: 0 0 0 3px rgba(51,165,182,0.15);
+    }
+    .table-wrap {
+        border: 1px solid #D9EEF2;
+        background: white;
+        border-radius: 10px;
+        overflow: auto;
+        max-height: 78vh;
+        box-shadow: 0 3px 14px rgba(0,0,0,0.10);
+    }
+    table.bn-table {
+        border-collapse: collapse;
+        width: max-content;
+        min-width: 100%;
+        font-size: 13px;
+    }
+    table.bn-table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: #1E7D8B;
+        color: white;
+        text-align: left;
+        padding: 10px 12px;
+        border: 1px solid #D9EEF2;
+        white-space: nowrap;
+    }
+    table.bn-table tbody td,
+    table.bn-table tbody th {
+        padding: 8px 12px;
+        border: 1px solid #E5EEF0;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+    table.bn-table tbody tr:nth-child(even) { background: #F8FBFC; }
+    table.bn-table tbody tr:hover { background: #EAF9FC; }
+</style>
+</head>
+<body>
+    <h1>Aperçu des 5 premières lignes du fichier Web</h1>
+    <div class="meta">5 ligne(s) affichée(s) · 29 colonne(s)</div>
+    <div class="toolbar">
+        <input id="searchInput" type="text" placeholder="Rechercher dans le tableau..." onkeyup="filterTable()">
+    </div>
+    <div class="table-wrap">
+        <table class="dataframe bn-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sku</th>
+      <th>virtual</th>
+      <th>downloadable</th>
+      <th>rating_count</th>
+      <th>average_rating</th>
+      <th>total_sales</th>
+      <th>tax_status</th>
+      <th>tax_class</th>
+      <th>post_author</th>
+      <th>post_date</th>
+      <th>post_date_gmt</th>
+      <th>post_content</th>
+      <th>product_type</th>
+      <th>post_title</th>
+      <th>post_excerpt</th>
+      <th>post_status</th>
+      <th>comment_status</th>
+      <th>ping_status</th>
+      <th>post_password</th>
+      <th>post_name</th>
+      <th>post_modified</th>
+      <th>post_modified_gmt</th>
+      <th>post_content_filtered</th>
+      <th>post_parent</th>
+      <th>guid</th>
+      <th>menu_order</th>
+      <th>post_type</th>
+      <th>post_mime_type</th>
+      <th>comment_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11862</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>3</td>
+      <td></td>
+      <td></td>
+      <td>2,00</td>
+      <td>2018-02-12 13:46:23</td>
+      <td>2018-02-12 12:46:23</td>
+      <td></td>
+      <td>Vin</td>
+      <td>Gilles Robin Hermitage Rouge 2012</td>
+      <td></td>
+      <td>publish</td>
+      <td>closed</td>
+      <td>closed</td>
+      <td></td>
+      <td>gilles-robin-hermitage-2012</td>
+      <td>2019-01-31 12:12:56</td>
+      <td>2019-01-31 11:12:56</td>
+      <td></td>
+      <td>0,00</td>
+      <td>https://www.bottle-neck.fr/wp-content/uploads/2020/03/gilles-robin-hermitage-2012.jpg</td>
+      <td>0,00</td>
+      <td>attachment</td>
+      <td>image/jpeg</td>
+      <td>0,00</td>
+    </tr>
+    <tr>
+      <td>16057</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>5</td>
+      <td></td>
+      <td></td>
+      <td>2,00</td>
+      <td>2018-04-17 15:29:17</td>
+      <td>2018-04-17 13:29:17</td>
+      <td></td>
+      <td>Vin</td>
+      <td>Domaine Pellé Sancerre Rouge La Croix Au Garde 2017</td>
+      <td></td>
+      <td>publish</td>
+      <td>closed</td>
+      <td>closed</td>
+      <td></td>
+      <td>pelle-sancerre-rouge-la-croix-au-garde-2017</td>
+      <td>2020-07-07 10:05:02</td>
+      <td>2020-07-07 08:05:02</td>
+      <td></td>
+      <td>0,00</td>
+      <td>https://www.bottle-neck.fr/wp-content/uploads/2020/03/pelle-sancerre-rouge-la-croix-au-garde-2017.jpg</td>
+      <td>0,00</td>
+      <td>attachment</td>
+      <td>image/jpeg</td>
+      <td>0,00</td>
+    </tr>
+    <tr>
+      <td>14692</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>5</td>
+      <td>taxable</td>
+      <td></td>
+      <td>2,00</td>
+      <td>2019-03-19 10:06:47</td>
+      <td>2019-03-19 09:06:47</td>
+      <td></td>
+      <td>Vin</td>
+      <td>Château Fonréaud Bordeaux Blanc Le Cygne 2016</td>
+      <td>&lt;div&gt;Grâce à la complémentarité des 3 cépages qui le constituent, Le Cygne est un vin complet, élégant et aérien, offrant une riche palette aromatique fruitée et florale, une rondeur en bouche avec des saveurs suaves.&lt;/div&gt;</td>
+      <td>publish</td>
+      <td>closed</td>
+      <td>closed</td>
+      <td></td>
+      <td>fonreaud-bordeaux-blanc-le-cygne-2016</td>
+      <td>2020-04-25 21:40:31</td>
+      <td>2020-04-25 19:40:31</td>
+      <td></td>
+      <td>0,00</td>
+      <td>https://www.bottle-neck.fr/?post_type=product&amp;#038;p=5794</td>
+      <td>0,00</td>
+      <td>product</td>
+      <td></td>
+      <td>0,00</td>
+    </tr>
+    <tr>
+      <td>16295</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>14</td>
+      <td></td>
+      <td></td>
+      <td>2,00</td>
+      <td>2018-02-15 14:05:06</td>
+      <td>2018-02-15 13:05:06</td>
+      <td></td>
+      <td>Vin</td>
+      <td>Moulin de Gassac IGP Pays d'Hérault Guilhem Rosé 2019</td>
+      <td></td>
+      <td>publish</td>
+      <td>closed</td>
+      <td>closed</td>
+      <td></td>
+      <td>moulin-de-gassac-igp-pays-dherault-guilhem-rose-2019</td>
+      <td>2020-08-27 18:55:03</td>
+      <td>2020-08-27 16:55:03</td>
+      <td></td>
+      <td>0,00</td>
+      <td>https://www.bottle-neck.fr/wp-content/uploads/2020/03/moulin-de-gassac-igp-pays-dherault-guilhem-rose-2019.jpg</td>
+      <td>0,00</td>
+      <td>attachment</td>
+      <td>image/jpeg</td>
+      <td>0,00</td>
+    </tr>
+    <tr>
+      <td>15328</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>2</td>
+      <td>taxable</td>
+      <td></td>
+      <td>2,00</td>
+      <td>2019-03-27 18:05:09</td>
+      <td>2019-03-27 17:05:09</td>
+      <td></td>
+      <td>Vin</td>
+      <td>Agnès Levet Côte Rôtie Maestria 2017</td>
+      <td>&lt;span style="float: none; background-color: transparent; color: #000000; font-family: 'Open Sans',Arial,Verdana,sans-serif; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; list-style-type: none; text-align: center; text-decoration: none; text-indent: 0px;"&gt;C’est un vin élégant et délicat caractéristique du lieu-dit La Landonne, aux arômes fruités complété par des notes florales de violette et soutenu par le velours des tanins très fins et fermes.&lt;/span&gt;\n\n&amp;nbsp;</td>
+      <td>publish</td>
+      <td>closed</td>
+      <td>closed</td>
+      <td></td>
+      <td>agnes-levet-cote-rotie-maestria-2017</td>
+      <td>2020-07-25 15:45:02</td>
+      <td>2020-07-25 13:45:02</td>
+      <td></td>
+      <td>0,00</td>
+      <td>https://www.bottle-neck.fr/?post_type=product&amp;#038;p=5827</td>
+      <td>0,00</td>
+      <td>product</td>
+      <td></td>
+      <td>0,00</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+<script>
+function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector('table.bn-table');
+    const rows = table.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Aperçu de la base consolidée df_analyse</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 24px;
+        background: #F4FAFB;
+        color: #263238;
+    }
+    h1 {
+        color: #1E7D8B;
+        margin-bottom: 6px;
+    }
+    .meta {
+        color: #607D8B;
+        margin-bottom: 18px;
+    }
+    .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: #F4FAFB;
+        padding: 10px 0 14px 0;
+    }
+    input {
+        width: min(680px, 96%);
+        padding: 11px 13px;
+        border: 1px solid #B7DDE4;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+    }
+    input:focus {
+        border-color: #33A5B6;
+        box-shadow: 0 0 0 3px rgba(51,165,182,0.15);
+    }
+    .table-wrap {
+        border: 1px solid #D9EEF2;
+        background: white;
+        border-radius: 10px;
+        overflow: auto;
+        max-height: 78vh;
+        box-shadow: 0 3px 14px rgba(0,0,0,0.10);
+    }
+    table.bn-table {
+        border-collapse: collapse;
+        width: max-content;
+        min-width: 100%;
+        font-size: 13px;
+    }
+    table.bn-table thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        background: #1E7D8B;
+        color: white;
+        text-align: left;
+        padding: 10px 12px;
+        border: 1px solid #D9EEF2;
+        white-space: nowrap;
+    }
+    table.bn-table tbody td,
+    table.bn-table tbody th {
+        padding: 8px 12px;
+        border: 1px solid #E5EEF0;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+    table.bn-table tbody tr:nth-child(even) { background: #F8FBFC; }
+    table.bn-table tbody tr:hover { background: #EAF9FC; }
+</style>
+</head>
+<body>
+    <h1>Aperçu de la base consolidée df_analyse</h1>
+    <div class="meta">5 ligne(s) affichée(s) · 24 colonne(s)</div>
+    <div class="toolbar">
+        <input id="searchInput" type="text" placeholder="Rechercher dans le tableau..." onkeyup="filterTable()">
+    </div>
+    <div class="table-wrap">
+        <table class="dataframe bn-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>product_id</th>
+      <th>onsale_web</th>
+      <th>price</th>
+      <th>stock_quantity</th>
+      <th>stock_status</th>
+      <th>purchase_price</th>
+      <th>stock_status_original</th>
+      <th>stock_status_corrige</th>
+      <th>product_id_key</th>
+      <th>id_web</th>
+      <th>id_web_key</th>
+      <th>merge_erp_liaison</th>
+      <th>sku</th>
+      <th>total_sales</th>
+      <th>post_title</th>
+      <th>post_status</th>
+      <th>post_type</th>
+      <th>guid</th>
+      <th>post_date</th>
+      <th>post_modified</th>
+      <th>tax_status</th>
+      <th>comment_count</th>
+      <th>sku_key</th>
+      <th>merge_web</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3 847</td>
+      <td>1,00</td>
+      <td>24,20 €</td>
+      <td>16</td>
+      <td>instock</td>
+      <td>12,88 €</td>
+      <td>instock</td>
+      <td>instock</td>
+      <td>3 847</td>
+      <td>15298</td>
+      <td>15298</td>
+      <td>both</td>
+      <td>15298</td>
+      <td>6</td>
+      <td>Pierre Jean Villa Saint-Joseph Préface 2018</td>
+      <td>publish</td>
+      <td>product</td>
+      <td>https://www.bottle-neck.fr/?post_type=product&amp;#038;p=3847</td>
+      <td>2018-02-08 12:58:52</td>
+      <td>2019-12-30 09:30:29</td>
+      <td>taxable</td>
+      <td>0,00</td>
+      <td>15298</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3 849</td>
+      <td>1,00</td>
+      <td>34,30 €</td>
+      <td>10</td>
+      <td>instock</td>
+      <td>17,54 €</td>
+      <td>instock</td>
+      <td>instock</td>
+      <td>3 849</td>
+      <td>15296</td>
+      <td>15296</td>
+      <td>both</td>
+      <td>15296</td>
+      <td>9</td>
+      <td>Pierre Jean Villa Saint-Joseph Rouge Tildé 2017</td>
+      <td>publish</td>
+      <td>product</td>
+      <td>https://www.bottle-neck.fr/?post_type=product&amp;#038;p=3849</td>
+      <td>2018-02-08 13:49:41</td>
+      <td>2019-12-21 09:00:17</td>
+      <td>taxable</td>
+      <td>0,00</td>
+      <td>15296</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3 850</td>
+      <td>1,00</td>
+      <td>20,80 €</td>
+      <td>0</td>
+      <td>outofstock</td>
+      <td>10,64 €</td>
+      <td>outofstock</td>
+      <td>outofstock</td>
+      <td>3 850</td>
+      <td>15300</td>
+      <td>15300</td>
+      <td>both</td>
+      <td>15300</td>
+      <td>0</td>
+      <td>Pierre Jean Villa Crozes-Hermitage Accroche Coeur 2018</td>
+      <td>publish</td>
+      <td>product</td>
+      <td>https://www.bottle-neck.fr/?post_type=product&amp;#038;p=3850</td>
+      <td>2018-02-08 14:08:36</td>
+      <td>2020-06-26 18:15:03</td>
+      <td>taxable</td>
+      <td>0,00</td>
+      <td>15300</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4 032</td>
+      <td>1,00</td>
+      <td>14,10 €</td>
+      <td>26</td>
+      <td>instock</td>
+      <td>6,92 €</td>
+      <td>instock</td>
+      <td>instock</td>
+      <td>4 032</td>
+      <td>19814</td>
+      <td>19814</td>
+      <td>both</td>
+      <td>19814</td>
+      <td>12</td>
+      <td>Pierre Jean Villa IGP Collines Rhodaniennes Gamine 2018</td>
+      <td>publish</td>
+      <td>product</td>
+      <td>https://www.bottle-neck.fr/?post_type=product&amp;#038;p=4032</td>
+      <td>2018-02-09 14:01:05</td>
+      <td>2020-01-04 16:36:01</td>
+      <td>taxable</td>
+      <td>0,00</td>
+      <td>19814</td>
+      <td>both</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4 039</td>
+      <td>1,00</td>
+      <td>46,00 €</td>
+      <td>3</td>
+      <td>outofstock</td>
+      <td>23,77 €</td>
+      <td>outofstock</td>
+      <td>instock</td>
+      <td>4 039</td>
+      <td>19815</td>
+      <td>19815</td>
+      <td>both</td>
+      <td>19815</td>
+      <td>3</td>
+      <td>Pierre Jean Villa Côte Rôtie Carmina 2017</td>
+      <td>publish</td>
+      <td>product</td>
+      <td>https://www.bottle-neck.fr/?post_type=product&amp;#038;p=4039</td>
+      <td>2018-02-12 09:04:37</td>
+      <td>2020-01-04 16:36:10</td>
+      <td>taxable</td>
+      <td>0,00</td>
+      <td>19815</td>
+      <td>both</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+<script>
+function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector('table.bn-table');
+    const rows = table.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+    });
+}
+</script>
+</body>
+</html>
