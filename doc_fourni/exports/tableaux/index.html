@@ -3,131 +3,110 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exports BottleNeck - Tableaux</title>
+  <title>Exports BottleNeck - Navigateur livrable</title>
   <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f5f7fb;
-        color: #1f2937;
-    }
-    header {
-        background: linear-gradient(90deg, #33A5B6, #1E7D8B);
-        color: #fff;
-        padding: 18px 24px;
-        font-size: 20px;
-        font-weight: 700;
-    }
-    .layout {
-        display: grid;
-        grid-template-columns: 330px 1fr;
-        min-height: calc(100vh - 64px);
-    }
-    aside {
-        background: #fff;
-        border-right: 1px solid #e4e9f2;
-        padding: 18px;
-        overflow: auto;
-        max-height: calc(100vh - 64px);
-        box-sizing: border-box;
-    }
-    h2 {
-        margin-top: 0;
-        font-size: 1.05rem;
-        color: #1E7D8B;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    li {
-        display: grid;
-        grid-template-columns: 1fr 38px;
-        gap: 6px;
-        margin: 8px 0;
-        align-items: stretch;
-    }
-    .nav-link,
-    .external-link {
-        border: 1px solid #d3dbe8;
-        background: #f8faff;
-        padding: 10px 12px;
-        border-radius: 8px;
-        font-weight: 600;
-        color: #1f2937;
-        text-decoration: none;
-        line-height: 1.25;
-    }
-    .nav-link:hover,
-    .external-link:hover,
-    .nav-link:focus,
-    .external-link:focus {
-        background: #EAF9FC;
-        border-color: #33A5B6;
-        outline: none;
-    }
-    .external-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 0;
-        color: #1E7D8B;
-    }
-    main {
-        padding: 16px;
-        min-width: 0;
-    }
-    iframe {
-        width: 100%;
-        height: calc(100vh - 120px);
-        border: 1px solid #d3dbe8;
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-    .meta {
-        font-size: .85rem;
-        color: #4a5568;
-        margin-top: 14px;
-        line-height: 1.5;
-    }
-    .help {
-        background: #F4FAFB;
-        border-left: 5px solid #33A5B6;
-        border-radius: 8px;
-        padding: 10px 12px;
-        margin: 0 0 14px 0;
-        color: #34495E;
-        font-size: .9rem;
-        line-height: 1.45;
-    }
+    :root { --primary:#33A5B6; --primary-dark:#1E7D8B; --soft:#F4FAFB; --text:#1f2937; --muted:#607D8B; --line:#dce8ee; --sidebar:360px; }
+    * { box-sizing:border-box; }
+    html, body { height:100%; }
+    body { font-family:Inter,Segoe UI,Arial,sans-serif; margin:0; background:#eef4f8; color:var(--text); overflow:hidden; }
+    header { height:112px; background:linear-gradient(135deg,#33A5B6 0%,#1E7D8B 58%,#111827 100%); color:#fff; padding:22px 28px 18px 82px; }
+    header h1 { margin:0 0 6px 0; font-size:clamp(1.35rem,2.5vw,2.15rem); }
+    header p { margin:0; color:#EAF9FC; max-width:1100px; line-height:1.5; }
+    .menu-toggle { position:fixed; left:18px; top:22px; z-index:30; width:46px; height:46px; border:0; border-radius:14px; background:#fff; color:#1E7D8B; box-shadow:0 12px 28px rgba(17,24,39,.18); font-size:1.35rem; font-weight:900; cursor:pointer; }
+    .layout { display:grid; grid-template-columns:var(--sidebar) 1fr; height:calc(100vh - 112px); transition:grid-template-columns .24s ease; }
+    body.menu-closed .layout { grid-template-columns:0 1fr; }
+    aside { background:#fff; border-right:1px solid var(--line); overflow:auto; min-width:0; transition:transform .24s ease, opacity .2s ease; }
+    body.menu-closed aside { transform:translateX(-100%); opacity:0; pointer-events:none; }
+    .sidebar-inner { width:var(--sidebar); padding:18px; }
+    main { padding:18px; min-width:0; }
+    .search { position:sticky; top:0; background:#fff; padding-bottom:14px; z-index:4; }
+    .search input { width:100%; padding:12px 14px; border:1px solid #d3dbe8; border-radius:14px; font-size:.95rem; outline:none; }
+    .search input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(51,165,182,.15); }
+    .help { background:var(--soft); border-left:5px solid var(--primary); border-radius:12px; padding:12px 13px; margin:0 0 14px 0; color:#34495E; font-size:.9rem; line-height:1.45; }
+    .nav-section { margin:18px 0 22px; }
+    .nav-section h2 { display:flex; justify-content:space-between; align-items:center; margin:0 0 10px; color:#111827; font-size:.88rem; text-transform:uppercase; letter-spacing:.08em; }
+    .nav-section h2 em { font-style:normal; color:#1E7D8B; background:#EAF9FC; border-radius:999px; padding:3px 8px; }
+    ul { list-style:none; padding:0; margin:0; }
+    .nav-item { margin:9px 0; }
+    .nav-link { display:flex; flex-direction:column; gap:5px; padding:12px 13px; border:1px solid #d3dbe8; background:#f8faff; border-radius:14px; color:#1f2937; text-decoration:none; transition:.15s ease; }
+    .nav-link span { font-weight:850; line-height:1.25; }
+    .nav-link small { color:var(--muted); font-weight:650; line-height:1.35; }
+    .nav-link:hover, .nav-link:focus { background:#EAF9FC; border-color:var(--primary); transform:translateY(-1px); outline:none; }
+    .nav-link.active { background:#EAF9FC; border-color:#1E7D8B; box-shadow:inset 4px 0 0 #1E7D8B; }
+    iframe { width:100%; height:calc(100vh - 164px); border:1px solid #d3dbe8; border-radius:18px; background:#fff; box-shadow:0 16px 36px rgba(17,24,39,.14); }
+    .meta { font-size:.85rem; color:#4a5568; margin-top:14px; line-height:1.5; }
+    .toolbar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:12px 14px; }
+    .toolbar small { color:#607D8B; font-weight:700; }
+    @media (max-width:900px) { body { overflow:auto; } header { height:auto; padding-left:82px; } .layout, body.menu-closed .layout { grid-template-columns:1fr; height:auto; } aside { border-right:0; border-bottom:1px solid var(--line); } body.menu-closed aside { display:none; } main { padding:14px; } iframe { height:72vh; } }
   </style>
 </head>
 <body>
-  <header>Exports BottleNeck — Sommaire des tableaux et graphiques</header>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="sidebar" aria-expanded="true" title="Ouvrir, fermer ou faire glisser le menu">☰</button>
+  <header>
+    <h1>Exports BottleNeck — navigateur livrable</h1>
+    <p>Sommaire centralisé des pages HTML générées par le notebook : dashboard, analyses métier, contrôles qualité et aperçus de données.</p>
+  </header>
 
   <div class="layout">
-    <aside>
-      <h2>Sommaire</h2>
-      <p class="help">
-        Clique sur un titre pour l'afficher à droite. Le pictogramme ↗ ouvre la page dans un nouvel onglet si ton IDE bloque les iframes.
-      </p>
-      <ul><li><a class='nav-link' href='apercu_base_consolidee.html' target='viewer'>Apercu Base Consolidee</a><a class='external-link' href='apercu_base_consolidee.html' target='_blank' rel='noopener noreferrer' title='Ouvrir dans un nouvel onglet'>↗</a></li>
-<li><a class='nav-link' href='apercu_web_5_lignes.html' target='viewer'>Apercu Web 5 Lignes</a><a class='external-link' href='apercu_web_5_lignes.html' target='_blank' rel='noopener noreferrer' title='Ouvrir dans un nouvel onglet'>↗</a></li>
-<li><a class='nav-link' href='contrôle_des_fichiers_chargés.html' target='viewer'>Contrôle Des Fichiers Chargés</a><a class='external-link' href='contrôle_des_fichiers_chargés.html' target='_blank' rel='noopener noreferrer' title='Ouvrir dans un nouvel onglet'>↗</a></li>
-<li><a class='nav-link' href='contrôles_qualité_de_la_base_d_analyse.html' target='viewer'>Contrôles Qualité De La Base D Analyse</a><a class='external-link' href='contrôles_qualité_de_la_base_d_analyse.html' target='_blank' rel='noopener noreferrer' title='Ouvrir dans un nouvel onglet'>↗</a></li>
-<li><a class='nav-link' href='tableau_exporte.html' target='viewer'>Tableaux exportés</a><a class='external-link' href='tableau_exporte.html' target='_blank' rel='noopener noreferrer' title='Ouvrir dans un nouvel onglet'>↗</a></li>
-<li><a class='nav-link' href='top_20_des_prix_les_plus_élevés.html' target='viewer'>Top 20 Des Prix Les Plus Élevés</a><a class='external-link' href='top_20_des_prix_les_plus_élevés.html' target='_blank' rel='noopener noreferrer' title='Ouvrir dans un nouvel onglet'>↗</a></li></ul>
-      <p class="meta">
-        Généré le 2026-06-08 10:51:45<br>
-        Nombre de pages : 6
-      </p>
+    <aside id="sidebar">
+      <div class="sidebar-inner">
+        <div class="search">
+          <p class="help">Clique sur un titre pour l'afficher dans l'aperçu. Les exports sont regroupés par usage pour éviter une longue liste de tableaux non qualifiés.</p>
+          <input id="filter" type="search" placeholder="Rechercher un tableau, une anomalie, un indicateur..." aria-label="Filtrer les exports">
+        </div>
+        <section class='nav-section'><h2>Dashboard de synthèse <em>1</em></h2><ul><li class='nav-item' data-label='dashboard livrable dashboard de synthèse vue exécutive avec kpi, graphiques et tableaux prioritaires.'><a class='nav-link' href='dashboard_livrable.html' target='viewer'><span>Dashboard Livrable</span><small>Vue exécutive avec KPI, graphiques et tableaux prioritaires.</small></a></li></ul></section>
+<section class='nav-section'><h2>Analyses métier <em>1</em></h2><ul><li class='nav-item' data-label='top 20 des prix les plus élevés analyses métier classement prioritaire pour identifier les produits les plus significatifs.'><a class='nav-link' href='top_20_des_prix_les_plus_élevés.html' target='viewer'><span>Top 20 Des Prix Les Plus Élevés</span><small>Classement prioritaire pour identifier les produits les plus significatifs.</small></a></li></ul></section>
+<section class='nav-section'><h2>Contrôles qualité &amp; actions <em>2</em></h2><ul><li class='nav-item' data-label='contrôle des fichiers chargés contrôles qualité &amp; actions contrôle de fiabilité des données et points à corriger.'><a class='nav-link' href='contrôle_des_fichiers_chargés.html' target='viewer'><span>Contrôle Des Fichiers Chargés</span><small>Contrôle de fiabilité des données et points à corriger.</small></a></li>
+<li class='nav-item' data-label='contrôles qualité de la base d analyse contrôles qualité &amp; actions contrôle de fiabilité des données et points à corriger.'><a class='nav-link' href='contrôles_qualité_de_la_base_d_analyse.html' target='viewer'><span>Contrôles Qualité De La Base D Analyse</span><small>Contrôle de fiabilité des données et points à corriger.</small></a></li></ul></section>
+<section class='nav-section'><h2>Aperçus des données <em>2</em></h2><ul><li class='nav-item' data-label='apercu base consolidee aperçus des données aperçu de données sources ou consolidées.'><a class='nav-link' href='apercu_base_consolidee.html' target='viewer'><span>Apercu Base Consolidee</span><small>Aperçu de données sources ou consolidées.</small></a></li>
+<li class='nav-item' data-label='apercu web 5 lignes aperçus des données aperçu de données sources ou consolidées.'><a class='nav-link' href='apercu_web_5_lignes.html' target='viewer'><span>Apercu Web 5 Lignes</span><small>Aperçu de données sources ou consolidées.</small></a></li></ul></section>
+<section class='nav-section'><h2>Tableaux exportés <em>1</em></h2><ul><li class='nav-item' data-label='tableau exporte tableaux exportés tableau de contrôle généré automatiquement : ouvrir pour consulter son contenu détaillé.'><a class='nav-link' href='tableau_exporte.html' target='viewer'><span>Tableau Exporte</span><small>Tableau de contrôle généré automatiquement : ouvrir pour consulter son contenu détaillé.</small></a></li></ul></section>
+        <p class="meta">Généré le 08/06/2026 14:41<br>Nombre de pages : 7</p>
+      </div>
     </aside>
 
     <main>
-      <iframe id="viewer" name="viewer" src="apercu_base_consolidee.html" title="Aperçu des exports"></iframe>
+      <div class="toolbar"><strong>Aperçu intégré</strong><small id="currentPage">Dashboard Livrable</small></div>
+      <iframe id="viewer" name="viewer" src="dashboard_livrable.html" title="Aperçu des exports"></iframe>
     </main>
   </div>
+<script>
+const input = document.getElementById('filter');
+const items = Array.from(document.querySelectorAll('.nav-item'));
+const links = Array.from(document.querySelectorAll('.nav-link'));
+const current = document.getElementById('currentPage');
+const toggle = document.getElementById('menuToggle');
+input.addEventListener('input', () => {
+  const q = input.value.trim().toLowerCase();
+  items.forEach(item => { item.style.display = item.dataset.label.includes(q) ? '' : 'none'; });
+});
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    links.forEach(other => other.classList.remove('active'));
+    link.classList.add('active');
+    current.textContent = link.querySelector('span').textContent;
+  });
+});
+if (links[0]) { links[0].classList.add('active'); }
+function setMenuClosed(closed) {
+  document.body.classList.toggle('menu-closed', closed);
+  toggle.setAttribute('aria-expanded', String(!closed));
+}
+toggle.addEventListener('click', () => {
+  setMenuClosed(!document.body.classList.contains('menu-closed'));
+});
+let startX = null;
+document.addEventListener('touchstart', event => {
+  startX = event.changedTouches[0].clientX;
+}, { passive: true });
+document.addEventListener('touchend', event => {
+  if (startX === null) return;
+  const endX = event.changedTouches[0].clientX;
+  const delta = endX - startX;
+  if (delta < -70) setMenuClosed(true);
+  if (delta > 70 && startX < 80) setMenuClosed(false);
+  startX = null;
+}, { passive: true });
+</script>
 </body>
 </html>
