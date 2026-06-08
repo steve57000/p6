@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Tableau exporté</title>
+<title>Contrôles qualité de la base d'analyse</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -75,8 +75,8 @@
 </style>
 </head>
 <body>
-    <h1>Tableau exporté</h1>
-    <div class="meta">0 ligne(s) affichée(s) · 3 colonne(s)</div>
+    <h1>Contrôles qualité de la base d'analyse</h1>
+    <div class="meta">4 ligne(s) affichée(s) · 2 colonne(s)</div>
     <div class="toolbar">
         <input id="searchInput" type="text" placeholder="Rechercher dans le tableau..." onkeyup="filterTable()">
     </div>
@@ -84,12 +84,27 @@
         <table class="dataframe bn-table">
   <thead>
     <tr style="text-align: right;">
-      <th>Fichier</th>
-      <th>Colonne</th>
-      <th>Risque RGPD potentiel</th>
+      <th>Contrôle</th>
+      <th>Nombre de lignes</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>Prix valides</td>
+      <td>714</td>
+    </tr>
+    <tr>
+      <td>Ventes valides</td>
+      <td>714</td>
+    </tr>
+    <tr>
+      <td>Stocks valides</td>
+      <td>713</td>
+    </tr>
+    <tr>
+      <td>Lignes exploitables pour le CA</td>
+      <td>714</td>
+    </tr>
   </tbody>
 </table>
     </div>
