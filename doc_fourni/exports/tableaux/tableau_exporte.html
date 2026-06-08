@@ -1,109 +1,38 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Tableau exporté</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tableaux exportés BottleNeck</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 24px;
-        background: #F4FAFB;
-        color: #263238;
-    }
-    h1 {
-        color: #1E7D8B;
-        margin-bottom: 6px;
-    }
-    .meta {
-        color: #607D8B;
-        margin-bottom: 18px;
-    }
-    .toolbar {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: #F4FAFB;
-        padding: 10px 0 14px 0;
-    }
-    input {
-        width: min(680px, 96%);
-        padding: 11px 13px;
-        border: 1px solid #B7DDE4;
-        border-radius: 8px;
-        font-size: 15px;
-        outline: none;
-    }
-    input:focus {
-        border-color: #33A5B6;
-        box-shadow: 0 0 0 3px rgba(51,165,182,0.15);
-    }
-    .table-wrap {
-        border: 1px solid #D9EEF2;
-        background: white;
-        border-radius: 10px;
-        overflow: auto;
-        max-height: 78vh;
-        box-shadow: 0 3px 14px rgba(0,0,0,0.10);
-    }
-    table.bn-table {
-        border-collapse: collapse;
-        width: max-content;
-        min-width: 100%;
-        font-size: 13px;
-    }
-    table.bn-table thead th {
-        position: sticky;
-        top: 0;
-        z-index: 3;
-        background: #1E7D8B;
-        color: white;
-        text-align: left;
-        padding: 10px 12px;
-        border: 1px solid #D9EEF2;
-        white-space: nowrap;
-    }
-    table.bn-table tbody td,
-    table.bn-table tbody th {
-        padding: 8px 12px;
-        border: 1px solid #E5EEF0;
-        vertical-align: top;
-        white-space: nowrap;
-    }
-    table.bn-table tbody tr:nth-child(even) { background: #F8FBFC; }
-    table.bn-table tbody tr:hover { background: #EAF9FC; }
+body { font-family:Arial,sans-serif; margin:24px; background:#F4FAFB; color:#263238; }
+h1 { color:#1E7D8B; margin-bottom:6px; }
+.meta { color:#607D8B; margin-bottom:18px; }
+.table-wrap { border:1px solid #D9EEF2; background:white; border-radius:10px; overflow:auto; box-shadow:0 3px 14px rgba(0,0,0,.10); }
+table.bn-table { border-collapse:collapse; width:100%; min-width:760px; font-size:13px; }
+table.bn-table th { position:sticky; top:0; background:#1E7D8B; color:white; text-align:left; padding:10px 12px; white-space:nowrap; }
+table.bn-table td { padding:8px 12px; border:1px solid #E5EEF0; vertical-align:top; }
+table.bn-table tr:nth-child(even) { background:#F8FBFC; }
+a { color:#1E7D8B; font-weight:700; }
+.note { background:white; border-left:5px solid #33A5B6; border-radius:8px; padding:12px 14px; margin:16px 0; }
 </style>
 </head>
 <body>
-    <h1>Tableau exporté</h1>
-    <div class="meta">0 ligne(s) affichée(s) · 3 colonne(s)</div>
-    <div class="toolbar">
-        <input id="searchInput" type="text" placeholder="Rechercher dans le tableau..." onkeyup="filterTable()">
-    </div>
-    <div class="table-wrap">
-        <table class="dataframe bn-table">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Fichier</th>
-      <th>Colonne</th>
-      <th>Risque RGPD potentiel</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
+<h1>Tableaux exportés</h1>
+<div class="meta">6 page(s) HTML disponible(s)</div>
+<p class="note">Cette page remplace l'ancien export générique vide : les tableaux non titrés sont désormais exportés avec un nom unique pour éviter les écrasements.</p>
+<div class="table-wrap">
+<table class="bn-table">
+<thead><tr><th>Page</th><th>Catégorie</th><th>Contenu</th><th>Lien</th></tr></thead>
+<tbody>
+<tr><td>Apercu Base Consolidee</td><td>Tableau exporté</td><td>5 ligne(s) affichée(s) · 28 colonne(s)</td><td><a href='apercu_base_consolidee.html'>Ouvrir</a></td></tr>
+<tr><td>Apercu Web 5 Lignes</td><td>Tableau exporté</td><td>5 ligne(s) affichée(s) · 29 colonne(s)</td><td><a href='apercu_web_5_lignes.html'>Ouvrir</a></td></tr>
+<tr><td>Contrôle Des Fichiers Chargés</td><td>Tableau exporté</td><td>3 ligne(s) affichée(s) · 3 colonne(s)</td><td><a href='contrôle_des_fichiers_chargés.html'>Ouvrir</a></td></tr>
+<tr><td>Contrôles Qualité De La Base D Analyse</td><td>Tableau exporté</td><td>4 ligne(s) affichée(s) · 2 colonne(s)</td><td><a href='contrôles_qualité_de_la_base_d_analyse.html'>Ouvrir</a></td></tr>
+<tr><td>Dashboard livrable</td><td>Dashboard</td><td>Dashboard HTML</td><td><a href='dashboard_livrable.html'>Ouvrir</a></td></tr>
+<tr><td>Top 20 Des Prix Les Plus Élevés</td><td>Tableau exporté</td><td>20 ligne(s) affichée(s) · 5 colonne(s)</td><td><a href='top_20_des_prix_les_plus_élevés.html'>Ouvrir</a></td></tr>
+</tbody>
 </table>
-    </div>
-<script>
-function filterTable() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.querySelector('table.bn-table');
-    const rows = table.querySelectorAll('tbody tr');
-    rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(filter) ? '' : 'none';
-    });
-}
-</script>
+</div>
 </body>
 </html>
