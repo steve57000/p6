@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contrôles qualité de la base d&#x27;analyse</title>
+<title>Tableau exporté — contrôle généré par le notebook</title>
 <style>
     :root {
         --primary:#33A5B6; --primary-dark:#1E7D8B; --ink:#17202A; --muted:#607D8B;
@@ -48,44 +48,167 @@
 </head>
 <body>
 <header class="hero">
-    <h1>Contrôles qualité de la base d&#x27;analyse</h1>
+    <h1>Tableau exporté — contrôle généré par le notebook</h1>
     <p>Tableau HTML généré automatiquement par le notebook BottleNeck, avec recherche intégrée et en-têtes figés pour faciliter la lecture.</p>
 </header>
 <main>
     <section class="summary" aria-label="Résumé du tableau">
-        <div class="card"><span>Lignes affichées</span><strong>4</strong></div>
-        <div class="card"><span>Colonnes</span><strong>2</strong></div>
-        <div class="card"><span>Génération</span><strong>09/06/2026 13:09</strong></div>
-        <div class="card"><span>Colonnes principales</span><strong>Contrôle, Nombre de lignes</strong></div>
+        <div class="card"><span>Lignes affichées</span><strong>10</strong></div>
+        <div class="card"><span>Colonnes</span><strong>10</strong></div>
+        <div class="card"><span>Génération</span><strong>09/06/2026 13:10</strong></div>
+        <div class="card"><span>Colonnes principales</span><strong>price, purchase_price, prix_ht, taux_marge, marge_unitaire, stock_quantity…</strong></div>
     </section>
     <div class="toolbar">
         <input id="searchInput" type="search" placeholder="Rechercher dans ce tableau..." aria-label="Rechercher dans ce tableau">
-        <span class="counter" id="rowCounter">4 ligne(s)</span>
+        <span class="counter" id="rowCounter">10 ligne(s)</span>
     </div>
     <div class="table-wrap">
         <table class="dataframe bn-table">
   <thead>
     <tr style="text-align: right;">
-      <th>Contrôle</th>
-      <th>Nombre de lignes</th>
+      <th></th>
+      <th>price</th>
+      <th>purchase_price</th>
+      <th>prix_ht</th>
+      <th>taux_marge</th>
+      <th>marge_unitaire</th>
+      <th>stock_quantity</th>
+      <th>total_sales</th>
+      <th>ca_par_article</th>
+      <th>mois_stock</th>
+      <th>valorisation_stock_achat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Prix valides</td>
-      <td>714</td>
+      <th>price</th>
+      <td>1,00 €</td>
+      <td>0,98 €</td>
+      <td>1,00 €</td>
+      <td>-1,13%</td>
+      <td>0,94 €</td>
+      <td>-0</td>
+      <td>-1</td>
+      <td>0,63 €</td>
+      <td>0</td>
+      <td>0,37 €</td>
     </tr>
     <tr>
-      <td>Ventes valides</td>
-      <td>714</td>
+      <th>purchase_price</th>
+      <td>0,98 €</td>
+      <td>1,00 €</td>
+      <td>0,98 €</td>
+      <td>-19,20%</td>
+      <td>0,84 €</td>
+      <td>-0</td>
+      <td>-1</td>
+      <td>0,65 €</td>
+      <td>0</td>
+      <td>0,48 €</td>
     </tr>
     <tr>
-      <td>Stocks valides</td>
-      <td>713</td>
+      <th>prix_ht</th>
+      <td>1,00 €</td>
+      <td>0,98 €</td>
+      <td>1,00 €</td>
+      <td>-1,13%</td>
+      <td>0,94 €</td>
+      <td>-0</td>
+      <td>-1</td>
+      <td>0,63 €</td>
+      <td>0</td>
+      <td>0,37 €</td>
     </tr>
     <tr>
-      <td>Lignes exploitables pour le CA</td>
-      <td>714</td>
+      <th>taux_marge</th>
+      <td>-0,01 €</td>
+      <td>-0,19 €</td>
+      <td>-0,01 €</td>
+      <td>100,00%</td>
+      <td>0,28 €</td>
+      <td>-0</td>
+      <td>0</td>
+      <td>-0,13 €</td>
+      <td>-0</td>
+      <td>-0,50 €</td>
+    </tr>
+    <tr>
+      <th>marge_unitaire</th>
+      <td>0,94 €</td>
+      <td>0,84 €</td>
+      <td>0,94 €</td>
+      <td>28,37%</td>
+      <td>1,00 €</td>
+      <td>-0</td>
+      <td>-0</td>
+      <td>0,53 €</td>
+      <td>0</td>
+      <td>0,16 €</td>
+    </tr>
+    <tr>
+      <th>stock_quantity</th>
+      <td>-0,11 €</td>
+      <td>-0,02 €</td>
+      <td>-0,11 €</td>
+      <td>-43,82%</td>
+      <td>-0,23 €</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0,17 €</td>
+      <td>1</td>
+      <td>0,72 €</td>
+    </tr>
+    <tr>
+      <th>total_sales</th>
+      <td>-0,52 €</td>
+      <td>-0,50 €</td>
+      <td>-0,52 €</td>
+      <td>1,13%</td>
+      <td>-0,48 €</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0,11 €</td>
+      <td>-0</td>
+      <td>-0,06 €</td>
+    </tr>
+    <tr>
+      <th>ca_par_article</th>
+      <td>0,63 €</td>
+      <td>0,65 €</td>
+      <td>0,63 €</td>
+      <td>-12,83%</td>
+      <td>0,53 €</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1,00 €</td>
+      <td>0</td>
+      <td>0,39 €</td>
+    </tr>
+    <tr>
+      <th>mois_stock</th>
+      <td>0,20 €</td>
+      <td>0,25 €</td>
+      <td>0,20 €</td>
+      <td>-35,45%</td>
+      <td>0,11 €</td>
+      <td>1</td>
+      <td>-0</td>
+      <td>0,18 €</td>
+      <td>1</td>
+      <td>0,71 €</td>
+    </tr>
+    <tr>
+      <th>valorisation_stock_achat</th>
+      <td>0,37 €</td>
+      <td>0,48 €</td>
+      <td>0,37 €</td>
+      <td>-50,37%</td>
+      <td>0,16 €</td>
+      <td>1</td>
+      <td>-0</td>
+      <td>0,39 €</td>
+      <td>1</td>
+      <td>1,00 €</td>
     </tr>
   </tbody>
 </table>

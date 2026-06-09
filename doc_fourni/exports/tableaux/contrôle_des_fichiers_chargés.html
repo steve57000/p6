@@ -3,82 +3,64 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contrôle des fichiers chargés</title>
 <style>
+    :root {
+        --primary:#33A5B6; --primary-dark:#1E7D8B; --ink:#17202A; --muted:#607D8B;
+        --line:#D9EEF2; --soft:#F4FAFB; --white:#fff; --shadow:0 18px 42px rgba(17,24,39,.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-        font-family: Arial, sans-serif;
-        margin: 24px;
-        background: #F4FAFB;
-        color: #263238;
+        margin: 0;
+        font-family: Inter, Segoe UI, Arial, sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top left, #EAF9FC 0, #F7FBFC 34%, #EEF4F8 100%);
     }
-    h1 {
-        color: #1E7D8B;
-        margin-bottom: 6px;
-    }
-    .meta {
-        color: #607D8B;
-        margin-bottom: 18px;
-    }
-    .toolbar {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: #F4FAFB;
-        padding: 10px 0 14px 0;
-    }
-    input {
-        width: min(680px, 96%);
-        padding: 11px 13px;
-        border: 1px solid #B7DDE4;
-        border-radius: 8px;
-        font-size: 15px;
-        outline: none;
-    }
-    input:focus {
-        border-color: #33A5B6;
-        box-shadow: 0 0 0 3px rgba(51,165,182,0.15);
-    }
-    .table-wrap {
-        border: 1px solid #D9EEF2;
-        background: white;
-        border-radius: 10px;
-        overflow: auto;
-        max-height: 78vh;
-        box-shadow: 0 3px 14px rgba(0,0,0,0.10);
-    }
-    table.bn-table {
-        border-collapse: collapse;
-        width: max-content;
-        min-width: 100%;
-        font-size: 13px;
-    }
-    table.bn-table thead th {
-        position: sticky;
-        top: 0;
-        z-index: 3;
-        background: #1E7D8B;
+    .hero {
+        padding: 28px clamp(18px, 4vw, 48px);
         color: white;
-        text-align: left;
-        padding: 10px 12px;
-        border: 1px solid #D9EEF2;
-        white-space: nowrap;
+        background: linear-gradient(135deg, #33A5B6 0%, #1E7D8B 55%, #111827 100%);
     }
-    table.bn-table tbody td,
-    table.bn-table tbody th {
-        padding: 8px 12px;
-        border: 1px solid #E5EEF0;
-        vertical-align: top;
-        white-space: nowrap;
+    .hero h1 { margin: 0 0 10px; font-size: clamp(1.7rem, 3.5vw, 2.8rem); line-height: 1.05; }
+    .hero p { margin: 0; max-width: 960px; color: #EAF9FC; line-height: 1.55; }
+    main { padding: 20px clamp(14px, 3vw, 40px) 36px; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; box-shadow: var(--shadow); }
+    .card span { display:block; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.07em; font-weight:800; }
+    .card strong { display:block; margin-top:6px; font-size:1.25rem; color:#111827; }
+    .toolbar {
+        position: sticky; top: 0; z-index: 5; display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+        background: rgba(247,251,252,.92); backdrop-filter: blur(10px); border:1px solid var(--line);
+        border-radius: 18px; padding: 12px; margin-bottom: 16px; box-shadow: 0 10px 24px rgba(17,24,39,.07);
     }
+    .toolbar input { flex: 1 1 320px; min-width: 220px; padding: 12px 14px; border: 1px solid #B7DDE4; border-radius: 12px; font-size: 15px; outline: none; background:white; }
+    .toolbar input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(51,165,182,.16); }
+    .counter { color: var(--muted); font-weight: 800; }
+    .table-wrap { border: 1px solid var(--line); background: white; border-radius: 18px; overflow: auto; max-height: 76vh; box-shadow: var(--shadow); }
+    table.bn-table { border-collapse: separate; border-spacing: 0; width: max-content; min-width: 100%; font-size: 13px; }
+    table.bn-table thead th { position: sticky; top: 0; z-index: 3; background: #1E7D8B; color: white; text-align: left; padding: 11px 13px; border-bottom: 1px solid #166A75; white-space: nowrap; }
+    table.bn-table tbody td, table.bn-table tbody th { padding: 9px 13px; border-bottom: 1px solid #E5EEF0; vertical-align: top; white-space: nowrap; }
     table.bn-table tbody tr:nth-child(even) { background: #F8FBFC; }
     table.bn-table tbody tr:hover { background: #EAF9FC; }
 </style>
 </head>
 <body>
+<header class="hero">
     <h1>Contrôle des fichiers chargés</h1>
-    <div class="meta">3 ligne(s) affichée(s) · 3 colonne(s)</div>
+    <p>Tableau HTML généré automatiquement par le notebook BottleNeck, avec recherche intégrée et en-têtes figés pour faciliter la lecture.</p>
+</header>
+<main>
+    <section class="summary" aria-label="Résumé du tableau">
+        <div class="card"><span>Lignes affichées</span><strong>3</strong></div>
+        <div class="card"><span>Colonnes</span><strong>3</strong></div>
+        <div class="card"><span>Génération</span><strong>09/06/2026 13:08</strong></div>
+        <div class="card"><span>Colonnes principales</span><strong>Fichier, Nombre de lignes, Nombre de colonnes</strong></div>
+    </section>
     <div class="toolbar">
-        <input id="searchInput" type="text" placeholder="Rechercher dans le tableau..." onkeyup="filterTable()">
+        <input id="searchInput" type="search" placeholder="Rechercher dans ce tableau..." aria-label="Rechercher dans ce tableau">
+        <span class="counter" id="rowCounter">3 ligne(s)</span>
     </div>
     <div class="table-wrap">
         <table class="dataframe bn-table">
@@ -108,17 +90,22 @@
   </tbody>
 </table>
     </div>
+</main>
 <script>
+const input = document.getElementById('searchInput');
+const counter = document.getElementById('rowCounter');
+const rows = Array.from(document.querySelectorAll('table.bn-table tbody tr'));
 function filterTable() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.querySelector('table.bn-table');
-    const rows = table.querySelectorAll('tbody tr');
+    const filter = input.value.trim().toLowerCase();
+    let visible = 0;
     rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(filter) ? '' : 'none';
+        const ok = row.textContent.toLowerCase().includes(filter);
+        row.style.display = ok ? '' : 'none';
+        if (ok) visible += 1;
     });
+    counter.textContent = visible + ' ligne(s) visible(s)';
 }
+input.addEventListener('input', filterTable);
 </script>
 </body>
 </html>
