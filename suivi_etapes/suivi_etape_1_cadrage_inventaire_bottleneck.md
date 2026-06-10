@@ -76,11 +76,11 @@ Nommage observé et retenu pour le notebook final : `Bell_Steve_1_notebook_06202
 | `doc_fourni/exports/bottleneck_base_consolidee.xlsx` | Excel | Export de la base consolidée. | Sortie cohérente avec le notebook. |
 | `doc_fourni/exports/tableaux/index.html` | HTML | Index consolidé des tableaux exportés. | Support de navigation des exports. |
 | `doc_fourni/exports/tableaux/dashboard_livrable.html` | HTML | Dashboard de synthèse du livrable. | Support complémentaire de restitution. |
-| `suivi_etapes/Bell_Steve_resume_phase_1_Bottleneck.docx` | Word | Résumé de la phase 1 : préparation, contrôles, anomalies et recommandations système. | Vérifié et corrigé pour pointer vers le notebook final. |
-| `suivi_etapes/Bell_Steve_resume_phase_2_Bottleneck.docx` | Word | Résumé de la phase 2 : analyses métier, KPI CODIR, prix atypiques, stocks, marges et corrélations. | Vérifié et corrigé pour pointer vers le notebook final. |
-| `suivi_etapes/Bell_Steve_guide_fonctionnement_code_Bottleneck.docx` | Word | Nouveau guide expliquant le fonctionnement du code, des fonctions, des exports HTML, des calculs Python et des librairies utilisées. | Créé le 10/06/2026. |
+| `suivi_etapes/Bell_Steve_resume_phase_1_Bottleneck.docx` | Word | Résumé de la phase 1 : préparation, contrôles, anomalies et recommandations système. | À vérifier/corriger manuellement ensuite pour pointer vers le notebook final. |
+| `suivi_etapes/Bell_Steve_resume_phase_2_Bottleneck.docx` | Word | Résumé de la phase 2 : analyses métier, KPI CODIR, prix atypiques, stocks, marges et corrélations. | À vérifier/corriger manuellement ensuite pour pointer vers le notebook final. |
+| `suivi_etapes/Bell_Steve_guide_fonctionnement_code_Bottleneck.docx` | Word | Guide à créer manuellement pour expliquer le fonctionnement du code, des fonctions, des exports HTML, des calculs Python et des librairies utilisées. | À créer manuellement, puis à compléter ensuite. |
 
-Point de concordance corrigé : les documents de résumé ne doivent plus faire croire qu'un fichier `Template-Notebook-Bottleneck.ipynb` est le livrable de départ présent dans le dépôt. La référence documentaire cohérente est le notebook final `Bell_Steve_1_notebook_062026.ipynb`.
+Point de concordance à corriger dans les documents Word : les résumés de phase ne doivent plus faire croire qu'un fichier `Template-Notebook-Bottleneck.ipynb` est le livrable de départ présent dans le dépôt. La référence documentaire cohérente est le notebook final `Bell_Steve_1_notebook_062026.ipynb`.
 
 ---
 
@@ -131,7 +131,7 @@ Premières observations confirmées :
 | Corrélations entre variables quantitatives | Présent : matrice de corrélation et interprétation. |
 | Recommandations pour l'ERP | Présent : recommandations de fiabilisation des données et des contrôles. |
 
-Conclusion de vérification : le notebook `Bell_Steve_1_notebook_062026.ipynb` respecte le périmètre demandé pour la mission. Les documents de phase 1 et phase 2 sont cohérents avec ce notebook après correction de la référence au notebook final.
+Conclusion de vérification : le notebook `Bell_Steve_1_notebook_062026.ipynb` respecte le périmètre demandé pour la mission. Les documents de phase 1 et phase 2 devront être alignés manuellement avec ce notebook après correction de leur référence au notebook final.
 
 ---
 
@@ -175,11 +175,11 @@ Ordre de travail retenu et statut :
 | Élément vérifié | Résultat |
 |---|---|
 | `suivi_etape_1_cadrage_inventaire_bottleneck.md` | Mis à jour pour refléter les fichiers réellement présents, le notebook final et la vérification de concordance. |
-| `Bell_Steve_resume_phase_1_Bottleneck.docx` | Vérifié : le contenu correspond à la phase 1 et la référence au notebook final a été corrigée. |
-| `Bell_Steve_resume_phase_2_Bottleneck.docx` | Vérifié : le contenu correspond à la phase 2 et la référence au notebook final a été corrigée. |
+| `Bell_Steve_resume_phase_1_Bottleneck.docx` | Vérifié sur le fond : le contenu correspond à la phase 1. Correction binaire à faire manuellement pour pointer vers le notebook final. |
+| `Bell_Steve_resume_phase_2_Bottleneck.docx` | Vérifié sur le fond : le contenu correspond à la phase 2. Correction binaire à faire manuellement pour pointer vers le notebook final. |
 | `Bell_Steve_1_notebook_062026.ipynb` | Vérifié : 137 cellules, 89 cellules de code, syntaxe Python valide, sections attendues présentes. |
 | Exports HTML | Présents : index consolidé et dashboard livrable. |
-| Nouveau guide technique Word | Créé : `Bell_Steve_guide_fonctionnement_code_Bottleneck.docx`. |
+| Nouveau guide technique Word | À créer manuellement : `Bell_Steve_guide_fonctionnement_code_Bottleneck.docx`, puis à compléter avec l’explication du code. |
 
 ---
 
@@ -187,6 +187,6 @@ Ordre de travail retenu et statut :
 
 Statut : terminé et contrôlé.
 
-Résultat : le projet est cadré, les fichiers sont identifiés, le rôle de chaque fichier est clair, les documents de suivi sont alignés avec le notebook final, et le livrable notebook respecte le périmètre demandé.
+Résultat : le projet est cadré, les fichiers sont identifiés, le rôle de chaque fichier est clair, le fichier de suivi est aligné avec le notebook final, et le livrable notebook respecte le périmètre demandé.
 
 Prochaine étape recommandée : finaliser la présentation CODIR en s'appuyant sur le modèle PowerPoint, le résumé de phase 2 et le dashboard HTML.
