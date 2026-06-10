@@ -76,11 +76,12 @@ Nommage observé et retenu pour le notebook final : `Bell_Steve_1_notebook_06202
 | `doc_fourni/exports/bottleneck_base_consolidee.xlsx` | Excel | Export de la base consolidée. | Sortie cohérente avec le notebook. |
 | `doc_fourni/exports/tableaux/index.html` | HTML | Index consolidé des tableaux exportés. | Support de navigation des exports. |
 | `doc_fourni/exports/tableaux/dashboard_livrable.html` | HTML | Dashboard de synthèse du livrable. | Support complémentaire de restitution. |
-| `suivi_etapes/Bell_Steve_resume_phase_1_Bottleneck.docx` | Word | Résumé de la phase 1 : préparation, contrôles, anomalies et recommandations système. | À vérifier/corriger manuellement ensuite pour pointer vers le notebook final. |
-| `suivi_etapes/Bell_Steve_resume_phase_2_Bottleneck.docx` | Word | Résumé de la phase 2 : analyses métier, KPI CODIR, prix atypiques, stocks, marges et corrélations. | À vérifier/corriger manuellement ensuite pour pointer vers le notebook final. |
-| `suivi_etapes/Bell_Steve_guide_fonctionnement_code_Bottleneck.docx` | Word | Guide à créer manuellement pour expliquer le fonctionnement du code, des fonctions, des exports HTML, des calculs Python et des librairies utilisées. | À créer manuellement, puis à compléter ensuite. |
+| `suivi_etapes/Bell_Steve_resume_phase_1_Bottleneck.docx` | Word | Résumé de la phase 1 : préparation, contrôles, anomalies et recommandations système. | Vérifié et corrigé : la référence au notebook pointe vers `Bell_Steve_1_notebook_062026.ipynb`. |
+| `suivi_etapes/Bell_Steve_resume_phase_2_Bottleneck.docx` | Word | Résumé de la phase 2 : analyses métier, KPI CODIR, prix atypiques, stocks, marges et corrélations. | Vérifié et corrigé : la référence au notebook pointe vers `Bell_Steve_1_notebook_062026.ipynb`. |
+| `suivi_etapes/suivi_etapesBell_Steve_guide_fonctionnement_code_Bottleneck.docx` | Word | Guide de fonctionnement du code : fonctions, HTML, traitements Python, calculs métier, librairies et mode d'emploi. | Créé et complété le 10/06/2026. |
+| `livrables/Suivi Projet Bottleneck.docx` | Word | Suivi global du travail et rappel des livrables. | Vérifié et corrigé : le notebook final remplace l'ancienne référence au template, et le statut est terminé/contrôlé. |
 
-Point de concordance à corriger dans les documents Word : les résumés de phase ne doivent plus faire croire qu'un fichier `Template-Notebook-Bottleneck.ipynb` est le livrable de départ présent dans le dépôt. La référence documentaire cohérente est le notebook final `Bell_Steve_1_notebook_062026.ipynb`.
+Point de concordance corrigé le 10/06/2026 : les résumés de phase et le suivi global ne font plus référence à `Template-Notebook-Bottleneck.ipynb`. La référence documentaire cohérente est le notebook final `Bell_Steve_1_notebook_062026.ipynb`.
 
 ---
 
@@ -124,14 +125,14 @@ Premières observations confirmées :
 | Tops références | Présent : top CA et top quantités. |
 | Analyse 20/80 | Présent : CA et quantités. |
 | Valeurs aberrantes sur les prix | Présent : Z-score et méthode IQR. |
-| Boxplot des prix | Présent. |
+| Boxplot des prix | Présent : cellule de boîte à moustaches Pandas / Matplotlib dans l'étape 4.1. |
 | Analyse des stocks | Présent : stock, valorisation, mois de stock et stocks dormants. |
 | Rotation ou nombre de mois de stock | Présent : indicateur de mois de stock. |
 | Marges et taux de marge | Présent : prix HT, marge unitaire, taux de marge et marges négatives. |
 | Corrélations entre variables quantitatives | Présent : matrice de corrélation et interprétation. |
 | Recommandations pour l'ERP | Présent : recommandations de fiabilisation des données et des contrôles. |
 
-Conclusion de vérification : le notebook `Bell_Steve_1_notebook_062026.ipynb` respecte le périmètre demandé pour la mission. Les documents de phase 1 et phase 2 devront être alignés manuellement avec ce notebook après correction de leur référence au notebook final.
+Conclusion de vérification : le notebook `Bell_Steve_1_notebook_062026.ipynb` respecte le périmètre demandé pour la mission. Les documents de phase 1 et phase 2 sont alignés avec ce notebook, et le guide de fonctionnement du code est créé et complété.
 
 ---
 
@@ -175,11 +176,12 @@ Ordre de travail retenu et statut :
 | Élément vérifié | Résultat |
 |---|---|
 | `suivi_etape_1_cadrage_inventaire_bottleneck.md` | Mis à jour pour refléter les fichiers réellement présents, le notebook final et la vérification de concordance. |
-| `Bell_Steve_resume_phase_1_Bottleneck.docx` | Vérifié sur le fond : le contenu correspond à la phase 1. Correction binaire à faire manuellement pour pointer vers le notebook final. |
-| `Bell_Steve_resume_phase_2_Bottleneck.docx` | Vérifié sur le fond : le contenu correspond à la phase 2. Correction binaire à faire manuellement pour pointer vers le notebook final. |
-| `Bell_Steve_1_notebook_062026.ipynb` | Vérifié : 137 cellules, 89 cellules de code, syntaxe Python valide, sections attendues présentes. |
+| `Bell_Steve_resume_phase_1_Bottleneck.docx` | Vérifié et corrigé : le contenu correspond à la phase 1 et la référence au notebook final est cohérente. |
+| `Bell_Steve_resume_phase_2_Bottleneck.docx` | Vérifié et corrigé : le contenu correspond à la phase 2 et la référence au notebook final est cohérente. |
+| `Bell_Steve_1_notebook_062026.ipynb` | Vérifié : 137 cellules, 89 cellules de code, syntaxe Python valide, chargement des 3 fichiers, jointures, anomalies, CA, 20/80, boîte à moustaches, Z-score, IQR, stocks, marges, corrélations, exports et conclusion. |
 | Exports HTML | Présents : index consolidé et dashboard livrable. |
-| Nouveau guide technique Word | À créer manuellement : `Bell_Steve_guide_fonctionnement_code_Bottleneck.docx`, puis à compléter avec l’explication du code. |
+| Nouveau guide technique Word | Créé et complété : `suivi_etapesBell_Steve_guide_fonctionnement_code_Bottleneck.docx` explique les fonctions, le HTML, les traitements Python, les calculs, les librairies et les exports. |
+| `livrables/Suivi Projet Bottleneck.docx` | Vérifié et corrigé : le suivi global mentionne le notebook final et un statut terminé/contrôlé. |
 
 ---
 
