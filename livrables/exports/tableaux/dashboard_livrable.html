@@ -25,7 +25,8 @@ main { padding:24px clamp(18px,4vw,54px) 48px; }
 .grid { display:grid; grid-template-columns:1fr; gap:22px; }
 .panel { background:white; border:1px solid #dce8ee; border-radius:20px; padding:18px; box-shadow:0 10px 28px rgba(17,24,39,.08); overflow:hidden; }
 .panel h2 { margin:0 0 12px; color:#1E7D8B; }
-.chart-panel img { width:100%; display:block; border-radius:14px; border:1px solid #eef4f8; }
+.chart-panel { text-align:center; }
+.chart-panel img { width:min(100%, 980px); max-height:420px; height:auto; object-fit:contain; display:block; margin:0 auto; border-radius:14px; border:1px solid #eef4f8; }
 .panel-title { display:flex; justify-content:space-between; gap:12px; align-items:center; margin-bottom:10px; }
 .panel-title h2 { margin:0; }
 .panel-title span { color:#607D8B; font-size:.86rem; }
