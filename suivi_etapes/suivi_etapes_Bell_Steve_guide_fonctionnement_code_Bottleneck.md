@@ -50,7 +50,7 @@ Mise à jour : 10/06/2026
 
 - _preparer_html_tableau convertit un DataFrame en tableau HTML propre.
 
-- exporter_tableau_html écrit les fichiers dans exports/tableaux.
+- exporter_tableau_html écrit les fichiers dans livrables/exports/tableaux.
 
 - afficher_tableau affiche le tableau dans le notebook et crée son export HTML.
 
@@ -130,7 +130,7 @@ Mise à jour : 10/06/2026
 
 - bottleneck_base_consolidee.xlsx : base consolidée exploitable.
 
-- exports/tableaux/*.html : tableaux de contrôle et d’analyse.
+- livrables/exports/tableaux/*.html : tableaux de contrôle et d’analyse.
 
 - dashboard_livrable.html : synthèse des principaux KPI.
 

@@ -47,7 +47,7 @@ Livrables obligatoires de la mission :
 
 | N° | Livrable | Format | Rôle | Statut de conformité au 10/06/2026 |
 |---:|---|---|---|---|
-| 1 | Notebook | `.ipynb` Python ou R | Contenir les imports, l'exploration, le nettoyage, les jointures, les analyses, les graphiques et les conclusions. | Conforme : `doc_fourni/Bell_Steve_1_notebook_062026.ipynb` existe, contient 137 cellules, des contrôles qualité, des analyses métier, des exports et une conclusion. |
+| 1 | Notebook | `.ipynb` Python ou R | Contenir les imports, l'exploration, le nettoyage, les jointures, les analyses, les graphiques et les conclusions. | Conforme : `livrables/Bell_Steve_1_notebook_062026.ipynb` existe, contient 137 cellules, des contrôles qualité, des analyses métier, des exports et une conclusion. |
 | 2 | Présentation | PowerPoint / PDF, 20 slides maximum | Présenter la méthodologie, les analyses et les recommandations au CODIR. | Modèle disponible : `doc_fourni/ModeĖle_preėsentation-Bottleneck.pptx`. Le fichier final de présentation devra respecter le nommage attendu. |
 
 Nommage attendu :
@@ -68,14 +68,14 @@ Nommage observé et retenu pour le notebook final : `Bell_Steve_1_notebook_06202
 | `mission/scenario.pdf` | PDF | Scénario métier BottleNeck, consignes de Nicolas, phases 1 et 2, analyses demandées. | Source principale de la mission. |
 | `my_doc/analyse_mission.pdf` | PDF | Synthèse des attentes du projet, des livrables et de la structure recommandée. | Support d'organisation. |
 | `my_doc/analyse_fichiers.pdf` | PDF | Analyse initiale des fichiers sources. | Support d'inventaire. |
-| `doc_fourni/Data+Bottleneck/erp.xlsx` | Excel | Extraction ERP : `product_id`, vente web, prix, stock, statut de stock, prix d'achat. | Source de données métier. |
-| `doc_fourni/Data+Bottleneck/web.xlsx` | Excel | Extraction WordPress : SKU, ventes, dates, titres produits, descriptions, statuts, URLs, type de contenu. | Source de données web. |
-| `doc_fourni/Data+Bottleneck/liaison.xlsx` | Excel | Table de liaison entre `id_web` et `product_id`. | Fichier clé pour les jointures. |
-| `doc_fourni/Bell_Steve_1_notebook_062026.ipynb` | Notebook | Notebook final de travail : chargement, contrôles, nettoyage, jointures, analyses, anomalies, recommandations et exports. | Livrable notebook conforme au périmètre demandé. |
+| `livrables/Data+Bottleneck/erp.xlsx` | Excel | Extraction ERP : `product_id`, vente web, prix, stock, statut de stock, prix d'achat. | Source de données métier. |
+| `livrables/Data+Bottleneck/web.xlsx` | Excel | Extraction WordPress : SKU, ventes, dates, titres produits, descriptions, statuts, URLs, type de contenu. | Source de données web. |
+| `livrables/Data+Bottleneck/liaison.xlsx` | Excel | Table de liaison entre `id_web` et `product_id`. | Fichier clé pour les jointures. |
+| `livrables/Bell_Steve_1_notebook_062026.ipynb` | Notebook | Notebook final de travail : chargement, contrôles, nettoyage, jointures, analyses, anomalies, recommandations et exports. | Livrable notebook conforme au périmètre demandé. |
 | `doc_fourni/ModeĖle_preėsentation-Bottleneck.pptx` | PowerPoint | Modèle de présentation. | Base de présentation à enrichir. |
-| `doc_fourni/exports/bottleneck_base_consolidee.xlsx` | Excel | Export de la base consolidée. | Sortie cohérente avec le notebook. |
-| `doc_fourni/exports/tableaux/index.html` | HTML | Index consolidé des tableaux exportés. | Support de navigation des exports. |
-| `doc_fourni/exports/tableaux/dashboard_livrable.html` | HTML | Dashboard de synthèse du livrable. | Support complémentaire de restitution. |
+| `livrables/exports/bottleneck_base_consolidee.xlsx` | Excel | Export de la base consolidée. | Sortie cohérente avec le notebook. |
+| `livrables/exports/tableaux/index.html` | HTML | Index consolidé des tableaux exportés. | Support de navigation des exports. |
+| `livrables/exports/tableaux/dashboard_livrable.html` | HTML | Dashboard de synthèse du livrable. | Support complémentaire de restitution. |
 | `suivi_etapes/Bell_Steve_resume_phase_1_Bottleneck.docx` | Word | Résumé de la phase 1 : préparation, contrôles, anomalies et recommandations système. | Vérifié et corrigé : la référence au notebook pointe vers `Bell_Steve_1_notebook_062026.ipynb`. |
 | `suivi_etapes/Bell_Steve_resume_phase_2_Bottleneck.docx` | Word | Résumé de la phase 2 : analyses métier, KPI CODIR, prix atypiques, stocks, marges et corrélations. | Vérifié et corrigé : la référence au notebook pointe vers `Bell_Steve_1_notebook_062026.ipynb`. |
 | `suivi_etapes/suivi_etapesBell_Steve_guide_fonctionnement_code_Bottleneck.docx` | Word | Guide de fonctionnement du code : fonctions, HTML, traitements Python, calculs métier, librairies et mode d'emploi. | Créé et complété le 10/06/2026. |
