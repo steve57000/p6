@@ -8,7 +8,7 @@
   2. l'export générique `tableau_exporte.html` peut représenter un tableau déjà présent ailleurs (même contenu métier, nom différent).
 
 ## Correctifs appliqués
-- `doc_fourni/exports/tableaux/index.html` converti en **vue consolidée** : tous les tableaux sont rendus dans la même page, via une grille de cartes et un iframe par tableau.
+- `livrables/exports/tableaux/index.html` converti en **vue consolidée** : tous les tableaux sont rendus dans la même page, via une grille de cartes et un iframe par tableau.
 - Structure HTML/CSS simplifiée et homogénéisée (header, layout, cartes, chargement lazy).
 
 ## Recommandations "code pro" pour le notebook
