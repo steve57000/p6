@@ -1,126 +1,70 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exports BottleNeck - Navigateur livrable</title>
-  <style>
-    :root { --primary:#33A5B6; --primary-dark:#1E7D8B; --soft:#F4FAFB; --text:#1f2937; --muted:#607D8B; --line:#dce8ee; --sidebar:360px; }
-    * { box-sizing:border-box; }
-    html, body { height:100%; }
-    body { font-family:Inter,Segoe UI,Arial,sans-serif; margin:0; background:#eef4f8; color:var(--text); overflow:hidden; }
-    header { height:112px; background:linear-gradient(135deg,#33A5B6 0%,#1E7D8B 58%,#111827 100%); color:#fff; padding:22px 28px 18px 82px; }
-    header h1 { margin:0 0 6px 0; font-size:clamp(1.35rem,2.5vw,2.15rem); }
-    header p { margin:0; color:#EAF9FC; max-width:1100px; line-height:1.5; }
-    .menu-toggle { position:fixed; left:18px; top:22px; z-index:30; width:46px; height:46px; border:0; border-radius:14px; background:#fff; color:#1E7D8B; box-shadow:0 12px 28px rgba(17,24,39,.18); font-size:1.35rem; font-weight:900; cursor:pointer; }
-    .layout { display:grid; grid-template-columns:var(--sidebar) 1fr; height:calc(100vh - 112px); transition:grid-template-columns .24s ease; }
-    body.menu-closed .layout { grid-template-columns:0 1fr; }
-    aside { background:#fff; border-right:1px solid var(--line); overflow:auto; min-width:0; transition:transform .24s ease, opacity .2s ease; }
-    body.menu-closed aside { transform:translateX(-100%); opacity:0; pointer-events:none; }
-    .sidebar-inner { width:var(--sidebar); padding:18px; }
-    main { padding:18px; min-width:0; }
-    .search { position:sticky; top:0; background:#fff; padding-bottom:14px; z-index:4; }
-    .search input { width:100%; padding:12px 14px; border:1px solid #d3dbe8; border-radius:14px; font-size:.95rem; outline:none; }
-    .search input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(51,165,182,.15); }
-    .help { background:var(--soft); border-left:5px solid var(--primary); border-radius:12px; padding:12px 13px; margin:0 0 14px 0; color:#34495E; font-size:.9rem; line-height:1.45; }
-    .nav-section { margin:18px 0 22px; }
-    .nav-section h2 { display:flex; justify-content:space-between; align-items:center; margin:0 0 10px; color:#111827; font-size:.88rem; text-transform:uppercase; letter-spacing:.08em; }
-    .nav-section h2 em { font-style:normal; color:#1E7D8B; background:#EAF9FC; border-radius:999px; padding:3px 8px; }
-    ul { list-style:none; padding:0; margin:0; }
-    .nav-item { margin:9px 0; }
-    .nav-link { display:flex; flex-direction:column; gap:5px; padding:12px 13px; border:1px solid #d3dbe8; background:#f8faff; border-radius:14px; color:#1f2937; text-decoration:none; transition:.15s ease; }
-    .nav-link span { font-weight:850; line-height:1.25; }
-    .nav-link small { color:var(--muted); font-weight:650; line-height:1.35; }
-    .nav-link:hover, .nav-link:focus { background:#EAF9FC; border-color:var(--primary); transform:translateY(-1px); outline:none; }
-    .nav-link.active { background:#EAF9FC; border-color:#1E7D8B; box-shadow:inset 4px 0 0 #1E7D8B; }
-    iframe { width:100%; height:calc(100vh - 164px); border:1px solid #d3dbe8; border-radius:18px; background:#fff; box-shadow:0 16px 36px rgba(17,24,39,.14); }
-    .meta { font-size:.85rem; color:#4a5568; margin-top:14px; line-height:1.5; }
-    .toolbar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:12px 14px; }
-    .toolbar small { color:#607D8B; font-weight:700; }
-    @media (max-width:900px) { body { overflow:auto; } header { height:auto; padding-left:82px; } .layout, body.menu-closed .layout { grid-template-columns:1fr; height:auto; } aside { border-right:0; border-bottom:1px solid var(--line); } body.menu-closed aside { display:none; } main { padding:14px; } iframe { height:72vh; } }
-  </style>
-</head>
-<body>
-  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="sidebar" aria-expanded="true" title="Ouvrir, fermer ou faire glisser le menu">☰</button>
-  <header>
-    <h1>Exports BottleNeck — navigateur livrable</h1>
-    <p>Sommaire centralisé des pages HTML générées par le notebook : Dashboard, analyses métier, contrôles qualité et aperçus de données.</p>
-  </header>
-
-  <div class="layout">
-    <aside id="sidebar">
-      <div class="sidebar-inner">
-        <div class="search">
-          <p class="help">Clique sur un titre pour l'afficher dans l'aperçu. Les exports clés sont regroupés par usage pour une navigation de soutenance plus professionnelle.</p>
-          <input id="filter" type="search" placeholder="Rechercher un tableau, une anomalie, un indicateur..." aria-label="Filtrer les exports">
-        </div>
-        <section class='nav-section'><h2>Dashboard de synthèse <em>1</em></h2><ul>
-<li class='nav-item' data-label='dashboard exécutif dashboard de synthèse kpi, graphiques et tableaux prioritaires.'><a class='nav-link' href='dashboard_livrable.html' target='viewer'><span>Dashboard exécutif</span><small>KPI, graphiques et tableaux prioritaires.</small></a></li>
-</ul></section>
-<section class='nav-section'><h2>Exports clés <em>4</em></h2><ul>
-<li class='nav-item' data-label='base consolidée df_analyse exports clés aperçu de la base finale utilisée pour les analyses.'><a class='nav-link' href='apercu_base_consolidee.html' target='viewer'><span>Base consolidée df_analyse</span><small>Aperçu de la base finale utilisée pour les analyses.</small></a></li>
-<li class='nav-item' data-label='contrôle des fichiers chargés exports clés validation du chargement erp, web et liaison.'><a class='nav-link' href='contrôle_des_fichiers_chargés.html' target='viewer'><span>Contrôle des fichiers chargés</span><small>Validation du chargement ERP, Web et liaison.</small></a></li>
-<li class='nav-item' data-label='contrôles qualité de la base d&#x27;analyse exports clés synthèse des contrôles qualité sur la base consolidée.'><a class='nav-link' href='contrôles_qualité_de_la_base_d_analyse.html' target='viewer'><span>Contrôles qualité de la base d'analyse</span><small>Synthèse des contrôles qualité sur la base consolidée.</small></a></li>
-<li class='nav-item' data-label='journal d&#x27;anomalies exports clés anomalies détectées et recommandations associées.'><a class='nav-link' href='tableau_exporte_063.html' target='viewer'><span>Journal d'anomalies</span><small>Anomalies détectées et recommandations associées.</small></a></li>
-</ul></section>
-<section class='nav-section'><h2>Analyses commerciales <em>5</em></h2><ul>
-<li class='nav-item' data-label='chiffre d&#x27;affaires — synthèse analyses commerciales indicateurs principaux de chiffre d’affaires.'><a class='nav-link' href='tableau_exporte_008.html' target='viewer'><span>Chiffre d'affaires — synthèse</span><small>Indicateurs principaux de chiffre d’affaires.</small></a></li>
-<li class='nav-item' data-label='top chiffre d’affaires par sku analyses commerciales produits contributeurs au ca.'><a class='nav-link' href='tableau_exporte_025.html' target='viewer'><span>Top chiffre d’affaires par SKU</span><small>Produits contributeurs au CA.</small></a></li>
-<li class='nav-item' data-label='top quantités vendues par sku analyses commerciales produits les plus vendus en volume.'><a class='nav-link' href='tableau_exporte_026.html' target='viewer'><span>Top quantités vendues par SKU</span><small>Produits les plus vendus en volume.</small></a></li>
-<li class='nav-item' data-label='analyse 20/80 du ca analyses commerciales concentration du chiffre d’affaires.'><a class='nav-link' href='tableau_exporte_060.html' target='viewer'><span>Analyse 20/80 du CA</span><small>Concentration du chiffre d’affaires.</small></a></li>
-<li class='nav-item' data-label='prix atypiques — top 20 analyses commerciales produits aux prix les plus élevés à contrôler.'><a class='nav-link' href='top_20_des_prix_les_plus_élevés.html' target='viewer'><span>Prix atypiques — top 20</span><small>Produits aux prix les plus élevés à contrôler.</small></a></li>
-</ul></section>
-<section class='nav-section'><h2>Stocks, marges et corrélations <em>3</em></h2><ul>
-<li class='nav-item' data-label='stocks par produit stocks, marges et corrélations suivi des stocks et priorités opérationnelles.'><a class='nav-link' href='tableau_exporte_055.html' target='viewer'><span>Stocks par produit</span><small>Suivi des stocks et priorités opérationnelles.</small></a></li>
-<li class='nav-item' data-label='analyse des marges stocks, marges et corrélations marge unitaire, taux de marge et marge totale liée aux ventes.'><a class='nav-link' href='tableau_exporte_061.html' target='viewer'><span>Analyse des marges</span><small>Marge unitaire, taux de marge et marge totale liée aux ventes.</small></a></li>
-<li class='nav-item' data-label='corrélations quantitatives stocks, marges et corrélations relations entre variables numériques.'><a class='nav-link' href='tableau_exporte_062.html' target='viewer'><span>Corrélations quantitatives</span><small>Relations entre variables numériques.</small></a></li>
-</ul></section>
-        <p class="meta">Généré le 16/06/2026 15:51<br>Exports clés affichés : 13 (les autres fichiers HTML restent disponibles dans le dossier)</p>
-      </div>
-    </aside>
-
-    <main>
-      <div class="toolbar"><strong>Aperçu intégré</strong><small id="currentPage">Dashboard</small></div>
-      <iframe id="viewer" name="viewer" src="dashboard_livrable.html" title="Aperçu des exports"></iframe>
-    </main>
-  </div>
-<script>
-const input = document.getElementById('filter');
-const items = Array.from(document.querySelectorAll('.nav-item'));
-const links = Array.from(document.querySelectorAll('.nav-link'));
-const current = document.getElementById('currentPage');
-const toggle = document.getElementById('menuToggle');
-input.addEventListener('input', () => {
-  const q = input.value.trim().toLowerCase();
-  items.forEach(item => { item.style.display = item.dataset.label.includes(q) ? '' : 'none'; });
-});
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    links.forEach(other => other.classList.remove('active'));
-    link.classList.add('active');
-    current.textContent = link.querySelector('span').textContent;
-  });
-});
-if (links[0]) { links[0].classList.add('active'); }
-function setMenuClosed(closed) {
-  document.body.classList.toggle('menu-closed', closed);
-  toggle.setAttribute('aria-expanded', String(!closed));
-}
-toggle.addEventListener('click', () => {
-  setMenuClosed(!document.body.classList.contains('menu-closed'));
-});
-let startX = null;
-document.addEventListener('touchstart', event => {
-  startX = event.changedTouches[0].clientX;
-}, { passive: true });
-document.addEventListener('touchend', event => {
-  if (startX === null) return;
-  const endX = event.changedTouches[0].clientX;
-  const delta = endX - startX;
-  if (delta < -70) setMenuClosed(true);
-  if (delta > 70 && startX < 80) setMenuClosed(false);
-  startX = null;
-}, { passive: true });
-</script>
-</body>
-</html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Exports BottleNeck - index</title><style>body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#eef4f8;color:#1f2937}header{padding:22px 28px;background:linear-gradient(135deg,#33A5B6,#1E7D8B,#111827);color:white}main{display:grid;grid-template-columns:380px 1fr;height:calc(100vh - 98px)}nav{overflow:auto;padding:16px;background:white;border-right:1px solid #dce8ee}section{margin-bottom:18px}h2{font-size:1rem;color:#1E7D8B}h2 em{float:right;color:#607D8B;font-style:normal}ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}li a{display:block;padding:10px 12px 2px;border:1px solid #d3dbe8;border-radius:12px 12px 0 0;background:#f8faff;color:#17202A;text-decoration:none;font-weight:700}li small{display:block;padding:0 12px 10px;border:1px solid #d3dbe8;border-top:0;border-radius:0 0 12px 12px;background:#f8faff;color:#607D8B}iframe{width:100%;height:100%;border:0;background:white}</style></head><body><header><h1>Exports HTML BottleNeck</h1><p>Menu en deux niveaux : exports clés et exports techniques détaillés. Tous les fichiers HTML restent accessibles.</p></header><main><nav><section><h2>Exports clés <em>27</em></h2><ul><li><a href='apercu_base_consolidee.html' target='viewer'>Aperçu de la base consolidée df_analyse</a><small>apercu_base_consolidee.html</small></li>
+<li><a href='contrôle_des_fichiers_chargés.html' target='viewer'>Contrôle des fichiers chargés</a><small>contrôle_des_fichiers_chargés.html</small></li>
+<li><a href='contrôles_qualité_de_la_base_d_analyse.html' target='viewer'>Contrôles qualité de la base d&#x27;analyse</a><small>contrôles_qualité_de_la_base_d_analyse.html</small></li>
+<li><a href='dashboard_livrable.html' target='viewer'>Dashboard livrable BottleNeck</a><small>dashboard_livrable.html</small></li>
+<li><a href='tableau_exporte_008.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_008.html</small></li>
+<li><a href='tableau_exporte_009.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_009.html</small></li>
+<li><a href='tableau_exporte_012.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_012.html</small></li>
+<li><a href='tableau_exporte_017.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_017.html</small></li>
+<li><a href='tableau_exporte_020.html' target='viewer'>Tableau Exporte 020</a><small>tableau_exporte_020.html</small></li>
+<li><a href='tableau_exporte_025.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_025.html</small></li>
+<li><a href='tableau_exporte_033.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_033.html</small></li>
+<li><a href='tableau_exporte_046.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_046.html</small></li>
+<li><a href='tableau_exporte_047.html' target='viewer'>Contrôle des prix par produit</a><small>tableau_exporte_047.html</small></li>
+<li><a href='tableau_exporte_049.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_049.html</small></li>
+<li><a href='tableau_exporte_050.html' target='viewer'>Top produits par prix et ventes</a><small>tableau_exporte_050.html</small></li>
+<li><a href='tableau_exporte_051.html' target='viewer'>Top produits par prix et ventes</a><small>tableau_exporte_051.html</small></li>
+<li><a href='tableau_exporte_052.html' target='viewer'>Correspondance produits et SKU</a><small>tableau_exporte_052.html</small></li>
+<li><a href='tableau_exporte_053.html' target='viewer'>Top produits par prix et ventes</a><small>tableau_exporte_053.html</small></li>
+<li><a href='tableau_exporte_055.html' target='viewer'>Suivi des stocks par produit</a><small>tableau_exporte_055.html</small></li>
+<li><a href='tableau_exporte_056.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_056.html</small></li>
+<li><a href='tableau_exporte_057.html' target='viewer'>Top produits par prix et ventes</a><small>tableau_exporte_057.html</small></li>
+<li><a href='tableau_exporte_058.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_058.html</small></li>
+<li><a href='tableau_exporte_059.html' target='viewer'>Contrôle des prix par produit</a><small>tableau_exporte_059.html</small></li>
+<li><a href='tableau_exporte_060.html' target='viewer'>Analyse du chiffre d&#x27;affaires</a><small>tableau_exporte_060.html</small></li>
+<li><a href='tableau_exporte_061.html' target='viewer'>Analyse des marges</a><small>tableau_exporte_061.html</small></li>
+<li><a href='tableau_exporte_063.html' target='viewer'>Contrôle des anomalies détectées</a><small>tableau_exporte_063.html</small></li>
+<li><a href='top_20_des_prix_les_plus_élevés.html' target='viewer'>Top 20 des prix les plus élevés</a><small>top_20_des_prix_les_plus_élevés.html</small></li></ul></section><section><h2>Exports techniques détaillés <em>44</em></h2><ul><li><a href='apercu_web_5_lignes.html' target='viewer'>Aperçu des 5 premières lignes du fichier Web</a><small>apercu_web_5_lignes.html</small></li>
+<li><a href='tableau_exporte.html' target='viewer'>Tableaux exportés BottleNeck</a><small>tableau_exporte.html</small></li>
+<li><a href='tableau_exporte_001.html' target='viewer'>Tableau Exporte 001</a><small>tableau_exporte_001.html</small></li>
+<li><a href='tableau_exporte_002.html' target='viewer'>Tableau Exporte 002</a><small>tableau_exporte_002.html</small></li>
+<li><a href='tableau_exporte_003.html' target='viewer'>Tableau Exporte 003</a><small>tableau_exporte_003.html</small></li>
+<li><a href='tableau_exporte_004.html' target='viewer'>Tableau Exporte 004</a><small>tableau_exporte_004.html</small></li>
+<li><a href='tableau_exporte_005.html' target='viewer'>Tableau Exporte 005</a><small>tableau_exporte_005.html</small></li>
+<li><a href='tableau_exporte_006.html' target='viewer'>Tableau Exporte 006</a><small>tableau_exporte_006.html</small></li>
+<li><a href='tableau_exporte_007.html' target='viewer'>Tableau Exporte 007</a><small>tableau_exporte_007.html</small></li>
+<li><a href='tableau_exporte_010.html' target='viewer'>Tableau Exporte 010</a><small>tableau_exporte_010.html</small></li>
+<li><a href='tableau_exporte_011.html' target='viewer'>Tableau Exporte 011</a><small>tableau_exporte_011.html</small></li>
+<li><a href='tableau_exporte_013.html' target='viewer'>Tableau Exporte 013</a><small>tableau_exporte_013.html</small></li>
+<li><a href='tableau_exporte_014.html' target='viewer'>Tableau Exporte 014</a><small>tableau_exporte_014.html</small></li>
+<li><a href='tableau_exporte_015.html' target='viewer'>Tableau Exporte 015</a><small>tableau_exporte_015.html</small></li>
+<li><a href='tableau_exporte_016.html' target='viewer'>Tableau Exporte 016</a><small>tableau_exporte_016.html</small></li>
+<li><a href='tableau_exporte_018.html' target='viewer'>Tableau Exporte 018</a><small>tableau_exporte_018.html</small></li>
+<li><a href='tableau_exporte_019.html' target='viewer'>Tableau Exporte 019</a><small>tableau_exporte_019.html</small></li>
+<li><a href='tableau_exporte_021.html' target='viewer'>Tableau Exporte 021</a><small>tableau_exporte_021.html</small></li>
+<li><a href='tableau_exporte_022.html' target='viewer'>Tableau Exporte 022</a><small>tableau_exporte_022.html</small></li>
+<li><a href='tableau_exporte_023.html' target='viewer'>Tableau Exporte 023</a><small>tableau_exporte_023.html</small></li>
+<li><a href='tableau_exporte_024.html' target='viewer'>Tableau Exporte 024</a><small>tableau_exporte_024.html</small></li>
+<li><a href='tableau_exporte_026.html' target='viewer'>Analyse des ventes par SKU</a><small>tableau_exporte_026.html</small></li>
+<li><a href='tableau_exporte_027.html' target='viewer'>Analyse des ventes par SKU</a><small>tableau_exporte_027.html</small></li>
+<li><a href='tableau_exporte_028.html' target='viewer'>Tableau Exporte 028</a><small>tableau_exporte_028.html</small></li>
+<li><a href='tableau_exporte_029.html' target='viewer'>Analyse des ventes par SKU</a><small>tableau_exporte_029.html</small></li>
+<li><a href='tableau_exporte_030.html' target='viewer'>Tableau Exporte 030</a><small>tableau_exporte_030.html</small></li>
+<li><a href='tableau_exporte_031.html' target='viewer'>Tableau Exporte 031</a><small>tableau_exporte_031.html</small></li>
+<li><a href='tableau_exporte_032.html' target='viewer'>Analyse des ventes par SKU</a><small>tableau_exporte_032.html</small></li>
+<li><a href='tableau_exporte_034.html' target='viewer'>Tableau Exporte 034</a><small>tableau_exporte_034.html</small></li>
+<li><a href='tableau_exporte_035.html' target='viewer'>Tableau Exporte 035</a><small>tableau_exporte_035.html</small></li>
+<li><a href='tableau_exporte_036.html' target='viewer'>Tableau Exporte 036</a><small>tableau_exporte_036.html</small></li>
+<li><a href='tableau_exporte_037.html' target='viewer'>Tableau Exporte 037</a><small>tableau_exporte_037.html</small></li>
+<li><a href='tableau_exporte_038.html' target='viewer'>Tableau Exporte 038</a><small>tableau_exporte_038.html</small></li>
+<li><a href='tableau_exporte_039.html' target='viewer'>Tableau Exporte 039</a><small>tableau_exporte_039.html</small></li>
+<li><a href='tableau_exporte_040.html' target='viewer'>Tableau Exporte 040</a><small>tableau_exporte_040.html</small></li>
+<li><a href='tableau_exporte_041.html' target='viewer'>Tableau Exporte 041</a><small>tableau_exporte_041.html</small></li>
+<li><a href='tableau_exporte_042.html' target='viewer'>Tableau Exporte 042</a><small>tableau_exporte_042.html</small></li>
+<li><a href='tableau_exporte_043.html' target='viewer'>Tableau Exporte 043</a><small>tableau_exporte_043.html</small></li>
+<li><a href='tableau_exporte_044.html' target='viewer'>Tableau Exporte 044</a><small>tableau_exporte_044.html</small></li>
+<li><a href='tableau_exporte_045.html' target='viewer'>Tableau Exporte 045</a><small>tableau_exporte_045.html</small></li>
+<li><a href='tableau_exporte_048.html' target='viewer'>Tableau Exporte 048</a><small>tableau_exporte_048.html</small></li>
+<li><a href='tableau_exporte_054.html' target='viewer'>Analyse des ventes par SKU</a><small>tableau_exporte_054.html</small></li>
+<li><a href='tableau_exporte_062.html' target='viewer'>Tableau Exporte 062</a><small>tableau_exporte_062.html</small></li>
+<li><a href='tableau_exporte_064.html' target='viewer'>Tableau Exporte 064</a><small>tableau_exporte_064.html</small></li></ul></section></nav><iframe name="viewer" src="dashboard_livrable.html"></iframe></main></body></html>
