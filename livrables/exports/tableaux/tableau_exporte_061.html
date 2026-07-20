@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Analyse des marges</title>
+<title>Tableau — Variable 1, Variable 2, Corrélation, Corrélation Absolue</title>
 <style>
     :root {
         --primary:#33A5B6; --primary-dark:#1E7D8B; --ink:#17202A; --muted:#607D8B;
@@ -48,167 +48,136 @@
 </head>
 <body>
 <header class="hero">
-    <h1>Analyse des marges</h1>
+    <h1>Tableau — Variable 1, Variable 2, Corrélation, Corrélation Absolue</h1>
     <p>Tableau HTML généré automatiquement par le notebook BottleNeck, avec recherche intégrée et en-têtes figés pour faciliter la lecture.</p>
 </header>
 <main>
     <section class="summary" aria-label="Résumé du tableau">
-        <div class="card"><span>Lignes affichées</span><strong>10</strong></div>
-        <div class="card"><span>Colonnes</span><strong>10</strong></div>
-        <div class="card"><span>Génération</span><strong>13/07/2026 12:55</strong></div>
-        <div class="card"><span>Colonnes principales</span><strong>price, purchase_price, prix_ht, taux_marge, marge_unitaire, stock_quantity…</strong></div>
+        <div class="card"><span>Lignes affichées</span><strong>15</strong></div>
+        <div class="card"><span>Colonnes</span><strong>4</strong></div>
+        <div class="card"><span>Génération</span><strong>20/07/2026 16:38</strong></div>
+        <div class="card"><span>Colonnes principales</span><strong>Variable 1, Variable 2, Corrélation, Corrélation absolue</strong></div>
     </section>
     <div class="toolbar">
         <input id="searchInput" type="search" placeholder="Rechercher dans ce tableau..." aria-label="Rechercher dans ce tableau">
-        <span class="counter" id="rowCounter">10 ligne(s)</span>
+        <span class="counter" id="rowCounter">15 ligne(s)</span>
     </div>
     <div class="table-wrap">
         <table class="dataframe bn-table">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>price</th>
-      <th>purchase_price</th>
-      <th>prix_ht</th>
-      <th>taux_marge</th>
-      <th>marge_unitaire</th>
-      <th>stock_quantity</th>
-      <th>total_sales</th>
-      <th>ca_par_article</th>
-      <th>mois_stock</th>
-      <th>valorisation_stock_achat</th>
+      <th>Variable 1</th>
+      <th>Variable 2</th>
+      <th>Corrélation</th>
+      <th>Corrélation absolue</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>price</th>
-      <td>1,00 €</td>
-      <td>0,98 €</td>
-      <td>1,00 €</td>
-      <td>-0,01 %</td>
-      <td>0,94 €</td>
-      <td>-0</td>
-      <td>-1</td>
-      <td>0,63 €</td>
-      <td>0</td>
-      <td>0,37 €</td>
+      <th>2</th>
+      <td>price</td>
+      <td>prix_ht</td>
+      <td>1,00</td>
+      <td>1,00</td>
     </tr>
     <tr>
-      <th>purchase_price</th>
-      <td>0,98 €</td>
-      <td>1,00 €</td>
-      <td>0,98 €</td>
-      <td>-0,19 %</td>
-      <td>0,84 €</td>
-      <td>-0</td>
-      <td>-1</td>
-      <td>0,65 €</td>
-      <td>0</td>
-      <td>0,48 €</td>
+      <th>12</th>
+      <td>purchase_price</td>
+      <td>prix_ht</td>
+      <td>0,98</td>
+      <td>0,98</td>
     </tr>
     <tr>
-      <th>prix_ht</th>
-      <td>1,00 €</td>
-      <td>0,98 €</td>
-      <td>1,00 €</td>
-      <td>-0,01 %</td>
-      <td>0,94 €</td>
-      <td>-0</td>
-      <td>-1</td>
-      <td>0,63 €</td>
-      <td>0</td>
-      <td>0,37 €</td>
+      <th>10</th>
+      <td>purchase_price</td>
+      <td>price</td>
+      <td>0,98</td>
+      <td>0,98</td>
     </tr>
     <tr>
-      <th>taux_marge</th>
-      <td>-0,01 €</td>
-      <td>-0,19 €</td>
-      <td>-0,01 €</td>
-      <td>1,00 %</td>
-      <td>0,28 €</td>
-      <td>-0</td>
-      <td>0</td>
-      <td>-0,13 €</td>
-      <td>-0</td>
-      <td>-0,50 €</td>
+      <th>4</th>
+      <td>price</td>
+      <td>marge_unitaire</td>
+      <td>0,94</td>
+      <td>0,94</td>
     </tr>
     <tr>
-      <th>marge_unitaire</th>
-      <td>0,94 €</td>
-      <td>0,84 €</td>
-      <td>0,94 €</td>
-      <td>0,28 %</td>
-      <td>1,00 €</td>
-      <td>-0</td>
-      <td>-0</td>
-      <td>0,53 €</td>
-      <td>0</td>
-      <td>0,16 €</td>
+      <th>42</th>
+      <td>marge_unitaire</td>
+      <td>prix_ht</td>
+      <td>0,94</td>
+      <td>0,94</td>
     </tr>
     <tr>
-      <th>stock_quantity</th>
-      <td>-0,11 €</td>
-      <td>-0,02 €</td>
-      <td>-0,11 €</td>
-      <td>-0,44 %</td>
-      <td>-0,23 €</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0,17 €</td>
-      <td>1</td>
-      <td>0,72 €</td>
+      <th>14</th>
+      <td>purchase_price</td>
+      <td>marge_unitaire</td>
+      <td>0,84</td>
+      <td>0,84</td>
     </tr>
     <tr>
-      <th>total_sales</th>
-      <td>-0,52 €</td>
-      <td>-0,50 €</td>
-      <td>-0,52 €</td>
-      <td>0,01 %</td>
-      <td>-0,48 €</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0,11 €</td>
-      <td>-0</td>
-      <td>-0,06 €</td>
+      <th>58</th>
+      <td>stock_quantity</td>
+      <td>mois_stock</td>
+      <td>0,76</td>
+      <td>0,76</td>
     </tr>
     <tr>
-      <th>ca_par_article</th>
-      <td>0,63 €</td>
-      <td>0,65 €</td>
-      <td>0,63 €</td>
-      <td>-0,13 %</td>
-      <td>0,53 €</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1,00 €</td>
-      <td>0</td>
-      <td>0,39 €</td>
+      <th>59</th>
+      <td>stock_quantity</td>
+      <td>valorisation_stock_achat</td>
+      <td>0,72</td>
+      <td>0,72</td>
     </tr>
     <tr>
-      <th>mois_stock</th>
-      <td>0,20 €</td>
-      <td>0,25 €</td>
-      <td>0,20 €</td>
-      <td>-0,35 %</td>
-      <td>0,11 €</td>
-      <td>1</td>
-      <td>-0</td>
-      <td>0,18 €</td>
-      <td>1</td>
-      <td>0,71 €</td>
+      <th>89</th>
+      <td>mois_stock</td>
+      <td>valorisation_stock_achat</td>
+      <td>0,71</td>
+      <td>0,71</td>
     </tr>
     <tr>
-      <th>valorisation_stock_achat</th>
-      <td>0,37 €</td>
-      <td>0,48 €</td>
-      <td>0,37 €</td>
-      <td>-0,50 %</td>
-      <td>0,16 €</td>
-      <td>1</td>
-      <td>-0</td>
-      <td>0,39 €</td>
-      <td>1</td>
-      <td>1,00 €</td>
+      <th>71</th>
+      <td>ca_par_article</td>
+      <td>purchase_price</td>
+      <td>0,65</td>
+      <td>0,65</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>prix_ht</td>
+      <td>ca_par_article</td>
+      <td>0,63</td>
+      <td>0,63</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>ca_par_article</td>
+      <td>price</td>
+      <td>0,63</td>
+      <td>0,63</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>marge_unitaire</td>
+      <td>ca_par_article</td>
+      <td>0,53</td>
+      <td>0,53</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>total_sales</td>
+      <td>price</td>
+      <td>-0,52</td>
+      <td>0,52</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>prix_ht</td>
+      <td>total_sales</td>
+      <td>-0,52</td>
+      <td>0,52</td>
     </tr>
   </tbody>
 </table>

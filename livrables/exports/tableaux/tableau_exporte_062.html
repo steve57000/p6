@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tableau — Variable 1, Variable 2, Corrélation, Corrélation Absolue</title>
+<title>Contrôle des anomalies détectées</title>
 <style>
     :root {
         --primary:#33A5B6; --primary-dark:#1E7D8B; --ink:#17202A; --muted:#607D8B;
@@ -48,136 +48,122 @@
 </head>
 <body>
 <header class="hero">
-    <h1>Tableau — Variable 1, Variable 2, Corrélation, Corrélation Absolue</h1>
+    <h1>Contrôle des anomalies détectées</h1>
     <p>Tableau HTML généré automatiquement par le notebook BottleNeck, avec recherche intégrée et en-têtes figés pour faciliter la lecture.</p>
 </header>
 <main>
     <section class="summary" aria-label="Résumé du tableau">
-        <div class="card"><span>Lignes affichées</span><strong>15</strong></div>
-        <div class="card"><span>Colonnes</span><strong>4</strong></div>
-        <div class="card"><span>Génération</span><strong>13/07/2026 12:55</strong></div>
-        <div class="card"><span>Colonnes principales</span><strong>Variable 1, Variable 2, Corrélation, Corrélation absolue</strong></div>
+        <div class="card"><span>Lignes affichées</span><strong>13</strong></div>
+        <div class="card"><span>Colonnes</span><strong>5</strong></div>
+        <div class="card"><span>Génération</span><strong>20/07/2026 16:38</strong></div>
+        <div class="card"><span>Colonnes principales</span><strong>Source, Type d&#x27;anomalie, Description, Nombre de lignes concernées, Action recommandée</strong></div>
     </section>
     <div class="toolbar">
         <input id="searchInput" type="search" placeholder="Rechercher dans ce tableau..." aria-label="Rechercher dans ce tableau">
-        <span class="counter" id="rowCounter">15 ligne(s)</span>
+        <span class="counter" id="rowCounter">13 ligne(s)</span>
     </div>
     <div class="table-wrap">
         <table class="dataframe bn-table">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
-      <th>Variable 1</th>
-      <th>Variable 2</th>
-      <th>Corrélation</th>
-      <th>Corrélation absolue</th>
+      <th>Source</th>
+      <th>Type d'anomalie</th>
+      <th>Description</th>
+      <th>Nombre de lignes concernées</th>
+      <th>Action recommandée</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>price</td>
-      <td>prix_ht</td>
-      <td>100,00%</td>
-      <td>100,00%</td>
+      <td>ERP</td>
+      <td>Incohérence métier</td>
+      <td>Écart entre stock_quantity et stock_status.</td>
+      <td>2</td>
+      <td>Corriger le statut de stock à partir d'une règle métier validée.</td>
     </tr>
     <tr>
-      <th>12</th>
-      <td>purchase_price</td>
-      <td>prix_ht</td>
-      <td>97,60%</td>
-      <td>97,60%</td>
+      <td>ERP</td>
+      <td>Prix manquant, nul ou négatif</td>
+      <td>Produits dont le prix de vente est absent ou incohérent.</td>
+      <td>3</td>
+      <td>Bloquer la mise en vente si le prix est absent, nul ou négatif.</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>purchase_price</td>
-      <td>price</td>
-      <td>97,60%</td>
-      <td>97,60%</td>
+      <td>ERP</td>
+      <td>Stock négatif</td>
+      <td>Produits dont le stock est inférieur à zéro.</td>
+      <td>2</td>
+      <td>Contrôler les mouvements de stock et empêcher les saisies négatives non justifiées.</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>price</td>
-      <td>marge_unitaire</td>
-      <td>93,51%</td>
-      <td>93,51%</td>
+      <td>ERP</td>
+      <td>Prix d'achat manquant, nul ou négatif</td>
+      <td>Produits dont le prix d'achat ne permet pas de calculer correctement la marge.</td>
+      <td>0</td>
+      <td>Rendre le prix d'achat obligatoire dans l'ERP.</td>
     </tr>
     <tr>
-      <th>42</th>
-      <td>marge_unitaire</td>
-      <td>prix_ht</td>
-      <td>93,51%</td>
-      <td>93,51%</td>
+      <td>ERP</td>
+      <td>Prix d'achat supérieur au prix de vente</td>
+      <td>Produits potentiellement vendus avec une marge négative avant même le calcul HT.</td>
+      <td>7</td>
+      <td>Contrôler les prix d'achat et les prix de vente lors de la saisie.</td>
     </tr>
     <tr>
-      <th>14</th>
-      <td>purchase_price</td>
-      <td>marge_unitaire</td>
-      <td>83,53%</td>
-      <td>83,53%</td>
+      <td>Web</td>
+      <td>SKU absent</td>
+      <td>Lignes Web sans code article SKU.</td>
+      <td>85</td>
+      <td>Supprimer ou exclure les lignes non produit ; rendre le SKU obligatoire pour les produits.</td>
     </tr>
     <tr>
-      <th>58</th>
-      <td>stock_quantity</td>
-      <td>mois_stock</td>
-      <td>75,59%</td>
-      <td>75,59%</td>
+      <td>Web</td>
+      <td>Format SKU à contrôler</td>
+      <td>SKU ne respectant pas une codification strictement numérique.</td>
+      <td>4</td>
+      <td>Vérifier s'il s'agit de vraies références métier ou d'erreurs de saisie.</td>
     </tr>
     <tr>
-      <th>59</th>
-      <td>stock_quantity</td>
-      <td>valorisation_stock_achat</td>
-      <td>71,65%</td>
-      <td>71,65%</td>
+      <td>Web</td>
+      <td>SKU en doublon</td>
+      <td>SKU dupliqués sur les lignes produit du fichier Web.</td>
+      <td>0</td>
+      <td>Garantir l'unicité du SKU dans WordPress.</td>
     </tr>
     <tr>
-      <th>89</th>
-      <td>mois_stock</td>
-      <td>valorisation_stock_achat</td>
-      <td>70,70%</td>
-      <td>70,70%</td>
+      <td>Liaison</td>
+      <td>Article sans id_web</td>
+      <td>Produits ERP sans correspondance Web dans la table de liaison.</td>
+      <td>91</td>
+      <td>Mettre à jour la table de liaison pour chaque produit vendu sur le Web.</td>
     </tr>
     <tr>
-      <th>71</th>
-      <td>ca_par_article</td>
-      <td>purchase_price</td>
-      <td>64,71%</td>
-      <td>64,71%</td>
+      <td>Jointure</td>
+      <td>ERP sans liaison</td>
+      <td>Produits ERP non retrouvés dans la table de liaison.</td>
+      <td>0</td>
+      <td>Automatiser un contrôle de couverture entre ERP et liaison.</td>
     </tr>
     <tr>
-      <th>27</th>
-      <td>prix_ht</td>
-      <td>ca_par_article</td>
-      <td>62,72%</td>
-      <td>62,72%</td>
+      <td>Jointure</td>
+      <td>Liaison sans correspondance Web</td>
+      <td>Produits avec id_web mais absents des lignes produit Web.</td>
+      <td>20</td>
+      <td>Contrôler les SKU supprimés, archivés ou mal saisis côté Web.</td>
     </tr>
     <tr>
-      <th>70</th>
-      <td>ca_par_article</td>
-      <td>price</td>
-      <td>62,72%</td>
-      <td>62,72%</td>
+      <td>Prix</td>
+      <td>Valeur aberrante IQR</td>
+      <td>Prix identifiés comme atypiques selon la méthode interquartile.</td>
+      <td>31</td>
+      <td>Vérifier s'il s'agit de produits premium ou d'erreurs de saisie.</td>
     </tr>
     <tr>
-      <th>47</th>
-      <td>marge_unitaire</td>
-      <td>ca_par_article</td>
-      <td>52,95%</td>
-      <td>52,95%</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>total_sales</td>
-      <td>price</td>
-      <td>-51,63%</td>
-      <td>51,63%</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>prix_ht</td>
-      <td>total_sales</td>
-      <td>-51,63%</td>
-      <td>51,63%</td>
+      <td>Marge</td>
+      <td>Taux de marge négatif</td>
+      <td>Produits dont le taux de marge calculé est négatif.</td>
+      <td>1</td>
+      <td>Contrôler les prix d'achat, les prix de vente et la règle de TVA.</td>
     </tr>
   </tbody>
 </table>

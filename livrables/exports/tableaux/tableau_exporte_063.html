@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contrôle des anomalies détectées</title>
+<title>Tableau — Axe D&#x27;Amélioration, Recommandation, Impact Attendu</title>
 <style>
     :root {
         --primary:#33A5B6; --primary-dark:#1E7D8B; --ink:#17202A; --muted:#607D8B;
@@ -48,122 +48,74 @@
 </head>
 <body>
 <header class="hero">
-    <h1>Contrôle des anomalies détectées</h1>
+    <h1>Tableau — Axe D&#x27;Amélioration, Recommandation, Impact Attendu</h1>
     <p>Tableau HTML généré automatiquement par le notebook BottleNeck, avec recherche intégrée et en-têtes figés pour faciliter la lecture.</p>
 </header>
 <main>
     <section class="summary" aria-label="Résumé du tableau">
-        <div class="card"><span>Lignes affichées</span><strong>13</strong></div>
-        <div class="card"><span>Colonnes</span><strong>5</strong></div>
-        <div class="card"><span>Génération</span><strong>13/07/2026 12:55</strong></div>
-        <div class="card"><span>Colonnes principales</span><strong>Source, Type d&#x27;anomalie, Description, Nombre de lignes concernées, Action recommandée</strong></div>
+        <div class="card"><span>Lignes affichées</span><strong>9</strong></div>
+        <div class="card"><span>Colonnes</span><strong>3</strong></div>
+        <div class="card"><span>Génération</span><strong>20/07/2026 16:38</strong></div>
+        <div class="card"><span>Colonnes principales</span><strong>Axe d&#x27;amélioration, Recommandation, Impact attendu</strong></div>
     </section>
     <div class="toolbar">
         <input id="searchInput" type="search" placeholder="Rechercher dans ce tableau..." aria-label="Rechercher dans ce tableau">
-        <span class="counter" id="rowCounter">13 ligne(s)</span>
+        <span class="counter" id="rowCounter">9 ligne(s)</span>
     </div>
     <div class="table-wrap">
         <table class="dataframe bn-table">
   <thead>
     <tr style="text-align: right;">
-      <th>Source</th>
-      <th>Type d'anomalie</th>
-      <th>Description</th>
-      <th>Nombre de lignes concernées</th>
-      <th>Action recommandée</th>
+      <th>Axe d'amélioration</th>
+      <th>Recommandation</th>
+      <th>Impact attendu</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>ERP</td>
-      <td>Incohérence métier</td>
-      <td>Écart entre stock_quantity et stock_status.</td>
-      <td>2</td>
-      <td>Corriger le statut de stock à partir d'une règle métier validée.</td>
+      <td>Référentiel produit</td>
+      <td>Centraliser les informations produit dans un référentiel unique.</td>
+      <td>Moins de doublons et de contradictions.</td>
     </tr>
     <tr>
-      <td>ERP</td>
-      <td>Prix manquant, nul ou négatif</td>
-      <td>Produits dont le prix de vente est absent ou incohérent.</td>
-      <td>3</td>
-      <td>Bloquer la mise en vente si le prix est absent, nul ou négatif.</td>
+      <td>Clés de jointure</td>
+      <td>Rendre obligatoire une clé commune fiable entre ERP et Web, ou automatiser la table de liaison.</td>
+      <td>Jointures plus fiables entre ERP et Web.</td>
     </tr>
     <tr>
-      <td>ERP</td>
-      <td>Stock négatif</td>
-      <td>Produits dont le stock est inférieur à zéro.</td>
-      <td>2</td>
-      <td>Contrôler les mouvements de stock et empêcher les saisies négatives non justifiées.</td>
+      <td>Prix de vente</td>
+      <td>Bloquer les prix manquants, nuls ou négatifs lors de la saisie.</td>
+      <td>Réduction des erreurs de chiffre d'affaires.</td>
     </tr>
     <tr>
-      <td>ERP</td>
-      <td>Prix d'achat manquant, nul ou négatif</td>
-      <td>Produits dont le prix d'achat ne permet pas de calculer correctement la marge.</td>
-      <td>0</td>
-      <td>Rendre le prix d'achat obligatoire dans l'ERP.</td>
+      <td>Prix d'achat</td>
+      <td>Rendre le prix d'achat obligatoire pour permettre le calcul fiable des marges.</td>
+      <td>Marge calculée de manière fiable.</td>
     </tr>
     <tr>
-      <td>ERP</td>
-      <td>Prix d'achat supérieur au prix de vente</td>
-      <td>Produits potentiellement vendus avec une marge négative avant même le calcul HT.</td>
-      <td>7</td>
-      <td>Contrôler les prix d'achat et les prix de vente lors de la saisie.</td>
+      <td>Stock</td>
+      <td>Mettre en place des contrôles sur les stocks négatifs et les stocks dormants.</td>
+      <td>Meilleure gestion de l'approvisionnement.</td>
     </tr>
     <tr>
-      <td>Web</td>
-      <td>SKU absent</td>
-      <td>Lignes Web sans code article SKU.</td>
-      <td>85</td>
-      <td>Supprimer ou exclure les lignes non produit ; rendre le SKU obligatoire pour les produits.</td>
+      <td>Statut de stock</td>
+      <td>Calculer automatiquement le statut de stock à partir de la quantité disponible.</td>
+      <td>Moins d'incohérences entre stock et disponibilité.</td>
     </tr>
     <tr>
-      <td>Web</td>
-      <td>Format SKU à contrôler</td>
-      <td>SKU ne respectant pas une codification strictement numérique.</td>
-      <td>4</td>
-      <td>Vérifier s'il s'agit de vraies références métier ou d'erreurs de saisie.</td>
+      <td>Ventes Web</td>
+      <td>Contrôler l'unicité du SKU et exclure les lignes non produit des analyses.</td>
+      <td>Analyses de ventes plus propres.</td>
     </tr>
     <tr>
-      <td>Web</td>
-      <td>SKU en doublon</td>
-      <td>SKU dupliqués sur les lignes produit du fichier Web.</td>
-      <td>0</td>
-      <td>Garantir l'unicité du SKU dans WordPress.</td>
+      <td>Qualité des données</td>
+      <td>Créer un tableau de bord de suivi des anomalies avec historisation.</td>
+      <td>Amélioration continue de la qualité des données.</td>
     </tr>
     <tr>
-      <td>Liaison</td>
-      <td>Article sans id_web</td>
-      <td>Produits ERP sans correspondance Web dans la table de liaison.</td>
-      <td>91</td>
-      <td>Mettre à jour la table de liaison pour chaque produit vendu sur le Web.</td>
-    </tr>
-    <tr>
-      <td>Jointure</td>
-      <td>ERP sans liaison</td>
-      <td>Produits ERP non retrouvés dans la table de liaison.</td>
-      <td>0</td>
-      <td>Automatiser un contrôle de couverture entre ERP et liaison.</td>
-    </tr>
-    <tr>
-      <td>Jointure</td>
-      <td>Liaison sans correspondance Web</td>
-      <td>Produits avec id_web mais absents des lignes produit Web.</td>
-      <td>20</td>
-      <td>Contrôler les SKU supprimés, archivés ou mal saisis côté Web.</td>
-    </tr>
-    <tr>
-      <td>Prix</td>
-      <td>Valeur aberrante IQR</td>
-      <td>Prix identifiés comme atypiques selon la méthode interquartile.</td>
-      <td>31</td>
-      <td>Vérifier s'il s'agit de produits premium ou d'erreurs de saisie.</td>
-    </tr>
-    <tr>
-      <td>Marge</td>
-      <td>Taux de marge négatif</td>
-      <td>Produits dont le taux de marge calculé est négatif.</td>
-      <td>1</td>
-      <td>Contrôler les prix d'achat, les prix de vente et la règle de TVA.</td>
+      <td>RGPD</td>
+      <td>Vérifier l'absence de données personnelles et limiter les exports aux données nécessaires.</td>
+      <td>Réduction du risque réglementaire.</td>
     </tr>
   </tbody>
 </table>
